@@ -1,0 +1,41 @@
+//custom variables
+
+$gray										: #5e6673;
+$gray-dark									: #363e49;
+$gray-lightest								: #dde1e9;
+$gray-lightest2								: #f3f3f5;
+$blue										: #4e8db6;
+$very-dark-gray								: #6f6f6f;
+$very-dark-grayish-blue						: #333e48;
+$dark-moderate-cyan							: #4c9688;
+$moderate-red								: #c13c3a;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+$body-bg									: $gray-lightest2 !default;
+$body-color									: $very-dark-grayish-blue !default;
+$font-size-base								: 0.875rem !default;
+$line-height-base							: 1.42857 !default;
+$link-hover-decoration						: none !default;
+$font-family-sans-serif						: 'MuseoSans-300', sans-serif !default;
+$headings-font-family						: 'MuseoSans-700', sans-serif !default;
+$headings-font-weight						: 400 !default;

@@ -1,0 +1,16 @@
+body,
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+a,
+button {
+	@include transition(all 0.25s linear);
+	&:hover {
+		@include transition(all 0.25s linear);
+	}
+}

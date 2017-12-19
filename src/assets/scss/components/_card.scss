@@ -1,0 +1,55 @@
+.card{
+	@include border-radius(5px);
+	-webkit-box-shadow: 1px 1px 1px 0 rgba(black,0.1);
+	box-shadow: 1px 1px 1px 0 rgba(black,0.1);
+	
+	.header{
+		min-height: 85px;
+		margin: 0 0 20px;
+		
+		.img-holder{
+			float: left;
+			width: 85px;
+		}
+		.header-info{
+			float: right;
+			padding: 5px 0;
+			
+			time{
+				display: block;
+				margin: 0 0 5px;
+				text-align: right;
+				color: rgba($very-dark-gray,.75);
+				font-family: $headings-font-family;
+			}
+		}
+	}
+	.article-detail{
+		min-height: 120px;
+		margin: 0 0 15px;
+		
+		.header-block{
+			margin: 0 0 10px;
+			
+			.sub-head{
+				display: block;
+				color: rgba($very-dark-gray,.75);
+			}
+			
+			.card-title{
+				margin: 5px 0;
+			}
+		}
+	}
+	.footer{		
+		.icons-list{
+			width: 80px;
+			float: left;
+		}
+		
+		.tags-list{
+			float: right;
+			width: calc(100% - 80px);
+		}
+	}
+}

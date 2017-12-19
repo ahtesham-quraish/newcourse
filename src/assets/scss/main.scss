@@ -1,0 +1,52 @@
+$breakpoints: (
+  'xs-phone': 320px,
+  'phone': 480px,
+  'small-tablet': 576px,
+  'tablet': 768px,
+  'desktop': 992px,
+  'widescreen': 1200px
+);
+
+// keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+@import 'vendors/include-media';
+
+//======================= Fonts =======================
+@import url(../css/MyFontsWebfontsKit.css);
+
+@import "custom";
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/mixins";
+
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/reset';
+
+#wrapper{
+	overflow: hidden;
+	width: 100%;
+	min-height: 100%;
+	position: relative;
+}
+
+// layouts
+@import 'layouts/header';
+
+
+// components
+@import 'components/courses-list';
+@import 'components/card';
+@import 'components/dropdown';
+@import 'components/icons-list';
+@import 'components/tags-list';

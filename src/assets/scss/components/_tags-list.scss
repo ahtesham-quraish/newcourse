@@ -1,0 +1,37 @@
+.tags-list{
+	letter-spacing: -6px;
+	margin: 0 -3px;
+	text-align: right;
+	
+	
+	li{
+		vertical-align: top;
+		letter-spacing: 0;
+		padding: 0 3px;
+		
+		&.list-inline-item{
+			&:not(:last-child){margin: 0;}
+		}
+		
+		.btn{
+			padding: 5px;
+			min-width: 30px;
+			text-align: center;
+			background: $gray-lightest2;
+			color: $very-dark-grayish-blue;
+			
+			&:hover{
+				background: $gray-lightest2;
+				color: $blue;
+			}
+		}
+		
+		&.tooltip-holder{
+			.btn{
+				background: none;
+				
+				.fa{margin-top: 2px;}
+			}
+		}
+	}
+}

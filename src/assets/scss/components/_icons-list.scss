@@ -1,0 +1,40 @@
+.icons-list{
+	letter-spacing: -6px;
+	margin: 0 -3px;
+	
+	li{
+		vertical-align: top;
+		letter-spacing: 0;
+		padding: 0 3px;
+		
+		&.list-inline-item{
+			&:not(:last-child){margin: 0;}
+		}
+		
+		.btn{
+			@include vertical-align(100%, middle, before);
+			padding: 3px;
+			font-size: 20px;
+			line-height: 1;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			color: rgba($very-dark-gray,0.75);
+			
+			> *{
+				margin: 0 0 0 -4px;
+			}
+			
+			&:hover{
+				background: $gray-lightest2;
+				color: $very-dark-grayish-blue;
+			}
+			
+			&.btn-fav{
+				&:hover{
+					color: $moderate-red;
+				}
+			}
+		}
+	}
+}

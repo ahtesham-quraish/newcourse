@@ -19,7 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "assets/scss/bootstrap.scss",
+        "assets/scss/main.scss",
+        "assets/css/bootstrap.css",
+        "assets/css/font-awesome.min.css",
+        "assets/css/main.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -54,10 +59,11 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "class": {
       "spec": false
     },
-    "component": {}
+    "component": {
+    }
   }
 }

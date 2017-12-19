@@ -1,0 +1,362 @@
+@import url(../css/MyFontsWebfontsKit.css);
+.clearfix:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.dropdown .drop-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.dropdown .drop-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  /* 1 */
+  text-overflow: ellipsis;
+  /* 2 */
+  overflow: hidden;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a,
+button {
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+a:hover,
+button:hover {
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+#wrapper {
+  overflow: hidden;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+#header {
+  overflow: hidden;
+  background: white;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 80px;
+  float: left;
+}
+
+.courses-list {
+  letter-spacing: -6px;
+  margin: 0 -10px;
+}
+
+.courses-list > li {
+  vertical-align: top;
+  letter-spacing: 0;
+  padding: 0 10px 20px;
+  width: 100%;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+@media (min-width: 576px) {
+  .courses-list > li {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .courses-list > li {
+    width: 33.33%;
+  }
+}
+
+.courses-list > li.list-inline-item:not(:last-child) {
+  margin: 0;
+}
+
+.card {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card .header {
+  min-height: 85px;
+  margin: 0 0 20px;
+}
+
+.card .header .img-holder {
+  float: left;
+  width: 85px;
+}
+
+.card .header .header-info {
+  float: right;
+  padding: 5px 0;
+}
+
+.card .header .header-info time {
+  display: block;
+  margin: 0 0 5px;
+  text-align: right;
+  color: rgba(111, 111, 111, 0.75);
+  font-family: "MuseoSans-700", sans-serif;
+}
+
+.card .article-detail {
+  min-height: 120px;
+  margin: 0 0 15px;
+}
+
+.card .article-detail .header-block {
+  margin: 0 0 10px;
+}
+
+.card .article-detail .header-block .sub-head {
+  display: block;
+  color: rgba(111, 111, 111, 0.75);
+}
+
+.card .article-detail .header-block .card-title {
+  margin: 5px 0;
+}
+
+.card .footer .icons-list {
+  width: 80px;
+  float: left;
+}
+
+.card .footer .tags-list {
+  float: right;
+  width: calc(100% - 80px);
+}
+
+.dropdown .dropdown-toggle {
+  padding-right: 20px;
+  padding-left: 5px;
+  cursor: pointer;
+  background: #f3f3f5;
+}
+
+.dropdown .dropdown-toggle:after {
+  display: none;
+}
+
+.dropdown .dropdown-toggle:before {
+  content: "\f107";
+  font: 16px/1 FontAwesome;
+  text-decoration: inherit;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  right: 6px;
+  cursor: pointer;
+}
+
+.dropdown .dropdown-toggle:hover {
+  color: #4e8db6;
+}
+
+.dropdown.show .dropdown-toggle {
+  color: #4e8db6;
+}
+
+.dropdown.show .dropdown-toggle:before {
+  cursor: pointer;
+  content: "\f106";
+}
+
+.dropdown.show .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  -moz-transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
+  -o-transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
+  -webkit-transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
+  transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.dropdown .drop-list li a {
+  display: block;
+  padding: 8px;
+  border-left: 2px solid transparent;
+  white-space: normal;
+  color: #333e48;
+}
+
+.dropdown .drop-list li a:hover,
+.dropdown .drop-list li a:active {
+  background: #dde1e9;
+  color: #333e48;
+  border-color: #4c9688;
+}
+
+.dropdown .drop-list li.active a {
+  background: #dde1e9;
+  color: #333e48;
+  border-color: #4c9688;
+}
+
+.dropdown-menu {
+  display: block;
+  left: auto;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  padding: 0;
+  overflow: auto;
+  text-transform: capitalize;
+  background: #f3f3f5;
+  min-width: 200px;
+  max-height: 210px;
+  border: 0;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  -moz-transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
+  -o-transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
+  -webkit-transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
+  transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.icons-list {
+  letter-spacing: -6px;
+  margin: 0 -3px;
+}
+
+.icons-list li {
+  vertical-align: top;
+  letter-spacing: 0;
+  padding: 0 3px;
+}
+
+.icons-list li.list-inline-item:not(:last-child) {
+  margin: 0;
+}
+
+.icons-list li .btn {
+  white-space: nowrap;
+  text-align: center;
+  padding: 3px;
+  font-size: 20px;
+  line-height: 1;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: rgba(111, 111, 111, 0.75);
+}
+
+.icons-list li .btn:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  min-height: 100%;
+}
+
+.icons-list li .btn > * {
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 99%;
+}
+
+.icons-list li .btn > * {
+  margin: 0 0 0 -4px;
+}
+
+.icons-list li .btn:hover {
+  background: #f3f3f5;
+  color: #333e48;
+}
+
+.icons-list li .btn.btn-fav:hover {
+  color: #c13c3a;
+}
+
+.tags-list {
+  letter-spacing: -6px;
+  margin: 0 -3px;
+  text-align: right;
+}
+
+.tags-list li {
+  vertical-align: top;
+  letter-spacing: 0;
+  padding: 0 3px;
+}
+
+.tags-list li.list-inline-item:not(:last-child) {
+  margin: 0;
+}
+
+.tags-list li .btn {
+  padding: 5px;
+  min-width: 30px;
+  text-align: center;
+  background: #f3f3f5;
+  color: #333e48;
+}
+
+.tags-list li .btn:hover {
+  background: #f3f3f5;
+  color: #4e8db6;
+}
+
+.tags-list li.tooltip-holder .btn {
+  background: none;
+}
+
+.tags-list li.tooltip-holder .btn .fa {
+  margin-top: 2px;
+}

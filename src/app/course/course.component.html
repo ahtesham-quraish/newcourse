@@ -1,0 +1,87 @@
+<div id="wrapper">
+  <header id="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="logo"><a href="#"><img src="assets/images/logo-dark.svg" class="img-fluid" alt="Cinch"></a></div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="main" role="main">
+    <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <app-detail *ngIf="showDetail"></app-detail>
+        <ul class="list-inline courses-list" *ngIf="!showDetail" >
+          <li class="list-inline-item" *ngFor="let course of courselist; let i = index">
+            <article  class="card">
+              <div class="card-block">
+                <header class="header clearfix">
+                  <div class="img-holder"><img src="assets/images/icon-img.png" class="img-fluid" alt="course Icon"></div>
+                  <div class="header-info">
+                    <time datetime="2017-12-18">1 hr</time>
+                    <div ngbDropdown class="dropdown">
+                      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 5 Units </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="drop-list">
+                          <li><a href="#">Cras justo odio</a></li>
+                          <li><a href="#">Dapibus ac facilisis</a></li>
+                          <li><a href="#">Morbi leo risus</a></li>
+                          <li><a href="#">Porta ac consectetur</a></li>
+                          <li><a href="#">Vestibulum at eros</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+                <div class="article-detail clearfix">
+                  <div class="header-block">
+                    <span class="sub-head">Module</span>
+                    <h6 class="card-title"><a href="javascript:void(0)" (click)="DetailCourse($event , i )" >{{course.name}}</a></h6>
+                  </div>
+                  <p class="card-text">Explore our new user experience and learn how to enable it for your <a href="#">organization</a>.</p>
+                </div>
+                <footer class="footer clearfix">
+                  <ul class="icons-list list-inline">
+                    <li class="list-inline-item">
+                      <a href="javascript:void(0)" class="btn btn-icon btn-light btn-fav">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="javascript:void(0)" class="btn btn-icon btn-light">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <ul *ngIf="course.metaData.tags != null" class="tags-list list-inline">
+                    <li *ngFor="let tag of course.metaData.tags; let j = index" class="list-inline-item">
+                      <a href="javascript:void(0)" class="btn btn-light">{{tag}}</a>
+                    </li>
+                    <li *ngIf="course.metaData.tags.length > 2" class="list-inline-item tooltip-holder">
+                      <a href="javascript:void(0)" class="btn btn-light">
+                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </footer>
+              </div>
+            </article>
+          </li>
+         
+          
+          
+          
+         
+         
+          
+         
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  </main>
+</div>

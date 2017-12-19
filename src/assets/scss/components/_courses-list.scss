@@ -1,0 +1,20 @@
+.courses-list{
+	letter-spacing: -6px;
+	margin: 0 -10px;
+	
+	> li{
+		vertical-align: top;
+		letter-spacing: 0;
+		padding: 0 10px 20px;
+		width: 100%;
+		@include transition(all 0.25s linear);
+		
+		@include media('≥small-tablet') {width: 50%;}
+		@include media('≥desktop') {width: 33.33%;}
+		
+		&.list-inline-item{
+			&:not(:last-child){margin: 0;}
+		}
+	}
+	
+}
