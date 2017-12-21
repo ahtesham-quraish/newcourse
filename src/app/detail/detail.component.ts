@@ -59,7 +59,7 @@ export class DetailComponent implements OnInit {
       }
       this.wind.nativeWindow.initFixedScrollBlock();
       }.bind(this), 1000);
-    this.wind.nativeWindow.initAnchors();
+    //this.wind.nativeWindow.initAnchors();
   }
 
 }

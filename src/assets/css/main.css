@@ -290,6 +290,12 @@ audio {
   padding: 0.875rem;
 }
 
+@media (max-width: 767px) {
+  .card .card-block {
+    padding: 0.5rem;
+  }
+}
+
 .card .header {
   min-height: 85px;
   margin: 0 0 20px;
