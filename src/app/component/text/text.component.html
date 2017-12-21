@@ -1,0 +1,7 @@
+<div attr.id="{{'tab'+index}}" class="section" > 
+    <h1>{{content.name}}</h1>
+    <div class="full-auto">
+            <div [innerHTML]="content.text | safeHtml" class="info-text"></div>
+    </div>
+  </div>
+  

@@ -3,13 +3,24 @@
 	-webkit-box-shadow: 1px 1px 1px 0 rgba(black,0.1);
 	box-shadow: 1px 1px 1px 0 rgba(black,0.1);
 	
+	.card-block{
+		padding: 0.875rem;
+	}
+	
 	.header{
 		min-height: 85px;
 		margin: 0 0 20px;
 		
 		.img-holder{
 			float: left;
+			@include border-radius(100%);
+			border: 1px solid rgba(black,.2);
 			width: 85px;
+			
+			img{
+				@include border-radius(100%);
+				width: 100%;
+			}
 		}
 		.header-info{
 			float: right;
@@ -50,6 +61,18 @@
 		.tags-list{
 			float: right;
 			width: calc(100% - 80px);
+		}
+	}
+	
+	&.course-detail{
+		margin-bottom: 20px;
+		
+		.btn-holder{
+			overflow: hidden;
+			padding: 10px;
+			border-top: 1px solid rgba(black,.2);
+			
+			@include media('≥desktop') {padding: 15px 20px;}
 		}
 	}
 }

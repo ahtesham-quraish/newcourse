@@ -9,7 +9,7 @@
 		width: 100%;
 		@include transition(all 0.25s linear);
 		
-		@include media('≥small-tablet') {width: 50%;}
+		@include media('≥tablet') {width: 50%;}
 		@include media('≥desktop') {width: 33.33%;}
 		
 		&.list-inline-item{

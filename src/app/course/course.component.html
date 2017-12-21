@@ -10,10 +10,10 @@
     </div>
   </header>
   <main id="main" role="main">
+      <app-detail [courseDetail]="courseDetail" *ngIf="showDetail"></app-detail>
     <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <app-detail *ngIf="showDetail"></app-detail>
         <ul class="list-inline courses-list" *ngIf="!showDetail" >
           <li class="list-inline-item" *ngFor="let course of courselist; let i = index">
             <article  class="card">

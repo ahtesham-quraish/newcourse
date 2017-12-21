@@ -13,18 +13,19 @@ export class CourseComponent implements OnInit {
   constructor(private courselistingser : CourseListingServiceService) { }
   courselist:any;
   showDetail = false;
+  courseDetail:any;
   ngOnInit() {
     this.courselistingser.fetchCourseData().subscribe(
       (data) => {
         console.log('in com' , data)
         this.courselist = data;
-       
       }
     )
   }
 
-  DetailCourse(){
+  DetailCourse(event, index){
     this.showDetail = true;
+    this.courseDetail = this.courselist[index];
   }
 
 

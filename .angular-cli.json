@@ -24,9 +24,17 @@
         "assets/scss/main.scss",
         "assets/css/bootstrap.css",
         "assets/css/font-awesome.min.css",
-        "assets/css/main.css"
+        "assets/css/main.css",
+        "assets/css/style.css",
+        "../node_modules/videogular2/fonts/videogular.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "assets/js/jquery-1.11.2.min.js",
+        "assets/js/jquery.main.js",
+        "assets/jplayer/jquery.jplayer.js",
+        "assets/js/jquery.audioslideshow.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

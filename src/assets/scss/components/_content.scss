@@ -1,0 +1,29 @@
+#content{
+	overflow: hidden;
+	
+	@include media('≥tablet') {
+		font-size: 1rem;
+		padding-right: 20px;
+	}
+	
+	img{
+		margin: 0 auto 1rem;
+	}
+	
+	.section{
+		overflow: hidden;
+		padding: 10px 0;
+		
+		.card{
+			@include border-radius(0);
+		}
+		
+		h1{
+			.badge{
+				font-size: 50%;
+				vertical-align: middle;
+				font-family: $font-family-sans-serif;
+			}
+		}
+	}
+}

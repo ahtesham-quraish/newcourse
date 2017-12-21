@@ -1,0 +1,136 @@
+#main{
+	padding-top: 20px;
+	
+	h1,
+	h2{@include media('<small-tablet') {font-size: 1.5rem;}}
+	h3,
+	h4{@include media('<small-tablet') {font-size: 1.25rem;}}
+	h5{@include media('<small-tablet') {font-size: 1rem;}}
+}
+
+.page-header{
+	overflow: hidden;
+	margin: -20px 0 20px;
+	background: white;
+	padding: 10px 0;
+	border-top: 1px solid rgba(black,0.1);
+	-webkit-box-shadow: 0 2px 2px 0 rgba(black,0.1);
+	box-shadow: 0 2px 2px 0 rgba(black,0.1);
+	
+	.btn-back{
+		@include v-align(top);
+		font-size: 1rem;
+		font-family: "MuseoSans-700", sans-serif;
+		margin: 0 10px 10px;
+		
+		.fa{
+			font-size: 1.5rem;
+			vertical-align: text-bottom;
+		}
+	}
+	
+	.img-holder{
+		@include border-radius(100%);
+		border: 1px solid rgba(black,.2);
+		display: block;
+		margin: 0 auto 10px;
+		width: 100px;
+		
+		@include media('≥small-tablet') {
+			float: left;
+			margin: 0 20px 0 0;
+		}
+		
+		img{
+			@include border-radius(100%);
+			width: 100%;
+		}
+	}
+	
+	.header-text{
+		overflow: hidden;
+		
+		.sub-head{
+			display: block;
+			color: rgba($very-dark-gray,.75);
+		}
+		
+		h1{
+			@extend %ellipsis;
+			margin: 5px 0;
+		}
+		
+		.description{
+			@extend %ellipsis;
+			display: block;
+		}
+		
+		time{
+			display: block;
+			color: rgba($very-dark-gray,.75);
+			font-family: $headings-font-family;
+			
+			span{font-family: $font-family-sans-serif;}
+		}
+		
+		.holder{
+			overflow: hidden;
+			margin: 0 0 5px;
+		}
+	}
+	
+	.footer{
+		overflow: hidden;
+		
+		.icons-list{
+			float: right;
+			margin: 0 0 0 5px;
+			
+			@include media('≥small-tablet') {margin: 0 0 0 20px;}
+			
+			li{
+				padding-bottom: 3px;
+				
+				.btn{
+					background: $gray-lightest2;
+					
+					@include media('≥small-tablet') {
+						width: 36px;
+						height: 36px;
+						font-size: 22px;
+					}
+					
+				}
+			}
+		}
+		.tags-list{
+			overflow: hidden;
+			
+			li{
+				padding-bottom: 3px;
+				
+				.btn{
+					@include media('≥small-tablet') {
+						padding: 7px;
+						font-size: 1rem;
+						min-width: 50px;
+					}
+				}
+			}
+		}
+	}
+}
+
+video,
+audio{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.full-auto{
+	display: block;
+	width: 100%;
+	height: 500px;
+	overflow: auto;
+}

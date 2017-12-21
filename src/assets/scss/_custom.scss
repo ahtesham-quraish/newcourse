@@ -9,21 +9,11 @@ $very-dark-gray								: #6f6f6f;
 $very-dark-grayish-blue						: #333e48;
 $dark-moderate-cyan							: #4c9688;
 $moderate-red								: #c13c3a;
+$green										: #4c988b;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+$base-min-width								: 320px;
 
 
 // Bootstrap overrides
@@ -39,3 +29,4 @@ $link-hover-decoration						: none !default;
 $font-family-sans-serif						: 'MuseoSans-300', sans-serif !default;
 $headings-font-family						: 'MuseoSans-700', sans-serif !default;
 $headings-font-weight						: 400 !default;
+$font-size-h1								: 2rem !default;

@@ -42,6 +42,7 @@ $media-expressions: (
 
 // layouts
 @import 'layouts/header';
+@import 'layouts/main-content';
 
 
 // components
@@ -50,3 +51,6 @@ $media-expressions: (
 @import 'components/dropdown';
 @import 'components/icons-list';
 @import 'components/tags-list';
+@import 'components/sidebar';
+@import 'components/content';
+@import 'components/questions-list';

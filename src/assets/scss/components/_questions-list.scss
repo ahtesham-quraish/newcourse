@@ -1,0 +1,115 @@
+.questions-list {
+	@extend %listreset;
+	counter-reset: newCounter;
+	
+	> li{
+		.question{
+			display: block;
+			padding: 10px;
+			background: $gray-lightest2;
+			border-bottom:1px solid rgba(black,.2);
+			
+			@include media('≥desktop') {padding: 20px;}
+			
+			&:before {
+				float: left;
+				width: 26px;
+				text-align: center;
+				font-family: $headings-font-family;
+				margin: 0 10px 0 0;
+				counter-increment: newCounter;
+				content: "Q" counters(newCounter, ".") ".";
+				
+				@include media('≥desktop') {margin: 0 20px 0 0;}
+			}
+		}
+		
+		+ li{
+			.question{
+				border-top:1px solid rgba(black,.2);
+			}
+		}
+		
+		.text{
+			display: block;
+			overflow: hidden;
+		}
+		
+		> ol{
+			@extend %listreset;
+			counter-reset: labelCounter;
+
+			li{
+				label{
+					display: block;
+					margin: 0;
+					
+					.text-holder{
+						display: block;
+						cursor: pointer;
+						padding: 10px;
+						border: 1px solid transparent;
+						
+						@include media('≥desktop') {padding: 20px;}
+
+						&:before {
+							@include border-radius(100%);
+							float: left;
+							line-height: 20px;
+							width: 22px;
+							height: 22px;
+							text-align: center;
+							border: 1px solid rgba(black,.2);
+							background: white;
+							font-family: $headings-font-family;
+							margin: -2px 10px 0 0;
+							content: counter(labelCounter, upper-latin);
+							counter-increment: labelCounter;
+							
+							@include media('≥tablet') {
+								line-height: 26px;
+								width: 26px;
+								height: 26px;
+							}
+							
+							@include media('≥desktop') {margin: 0 20px 0 0;}
+						}
+						
+						&:hover{
+							background: $gray-lightest2;
+							border-top-color: rgba(black,.2);
+							border-bottom-color: rgba(black,.2);
+						}
+					}
+					
+					input[type="radio"]{
+						position: fixed;
+						left: 0;
+						top: 0;
+						z-index: -1;
+						opacity:0;
+					}
+					
+					[type="radio"]:checked ~ .text-holder{
+						border-color: $dark-moderate-cyan;
+						background: lighten($dark-moderate-cyan,50%);
+						
+						&:before {
+							font: 14px/20px FontAwesome;
+							content: "\f00c";
+							color: $dark-moderate-cyan;
+							border-color: $dark-moderate-cyan;
+							padding: 0;
+							
+							@include media('≥tablet') {
+								line-height: 26px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+}

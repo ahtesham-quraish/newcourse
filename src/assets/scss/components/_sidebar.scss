@@ -1,0 +1,69 @@
+#sidebar{
+	@include media('<tablet') {display: none;}
+	@include media('≥tablet') {
+		float: right;
+		width: 200px;
+		text-transform: capitalize;
+
+		h6{
+//			color: rgba($very-dark-gray,.75);
+			margin: 0 5px 10px;
+		}
+
+		ul{
+			margin: 0;
+
+			li{
+				a{
+					display: block;
+					color: $very-dark-grayish-blue;
+					padding: 5px;
+					overflow: hidden;
+					border-left: 2px solid transparent;
+
+					&:hover{
+						background: $gray-lightest2;
+						border-color: $dark-moderate-cyan;
+					}
+				}
+
+				&.active{
+					a{
+						background: $gray-lightest2;
+						border-color: $dark-moderate-cyan;
+					}
+				}
+				
+				&.add{
+					border-top: 1px solid rgba(black,.1);
+					border-bottom: 1px solid rgba(black,.1);
+					padding: 5px 0;
+					margin: 5px 0;
+					
+					a{
+						padding-top: 10px;
+						padding-bottom: 10px;
+					}
+				}
+				
+				.points{
+					@include border-radius(10px);
+					font-size: 12px;
+					padding: 5px;
+					float: right;
+				}
+				.challenge-tag{
+					display: block;
+					overflow: hidden;
+					padding: 2px 2px 1px 0;
+				}
+			}
+		}
+		
+		&.fixed-position{
+			+ #content{
+				padding-right: 220px;
+			}
+		}
+	}
+}

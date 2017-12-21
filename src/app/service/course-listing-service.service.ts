@@ -12,7 +12,7 @@ export class CourseListingServiceService {
 
   fetchCourseData(){
     console.log("me", allCourses)
-    let data = ['Idrees_AWS']
+    let data = {"regionId": "17", "active" : true}
     return this.http.post(allCourses , data).map(response => response.json());
    }
 }

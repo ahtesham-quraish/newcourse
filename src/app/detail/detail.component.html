@@ -1,3 +1,79 @@
-<p>
-  detail works!
-</p>
+<header class="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="img-holder"><img src="assets/images/icon-img.png" alt="course Image" class="img-fluid"></div>
+        <div class="header-text">
+          <div class="holder">
+            <span class="sub-head">Module</span>
+          <h1>{{title}}</h1>
+          <span class="description">Explore highlights from the Winter '18 Release Notes.</span>
+          <time datetime="2017-12-12"><span>Time Estimate :</span> 40 mins</time>
+          </div>
+          <div class="footer">
+            <ul class="icons-list list-inline">
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="btn btn-icon btn-light btn-fav">
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="btn btn-icon btn-light">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="tags-list list-inline">
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="btn btn-light">tag1</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="btn btn-light">tag2</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="btn btn-light">tag3</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="javascript:void(0)" class="btn btn-light">tag4</a>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card course-detail">
+      <div class="card-block">
+        <aside id="sidebar">
+          <h6>Topics</h6>
+          <ul class="list-unstyled" >
+              <li *ngFor="let c of contentlist; let i = index"><a attr.href="{{'#tab'+i}}" >{{c.name}}</a></li>
+            <!-- <li><a href="#tab1">Learning Objectives</a></li>
+            <li><a href="#tab2">Welcome to Your Lightning Experience Rollout</a></li>
+            <li><a href="#tab3">What It Takes to Go Live</a></li>
+            <li><a href="#tab4">Educate Yourself About Lightning Experience</a></li>
+            <li><a href="#tab5">Identify Stakeholders and an Executive Sponsor</a></li>
+            <li><a href="#tab6">Revisit Your Processes</a></li>
+            <li><a href="#tab7">Perform a Gap Analysis</a></li>
+            <li><a href="#tab8">Improve Your Implementation with Salesforce Optimizer</a></li> -->
+            <li class="add">
+              <a href="#tab9">
+                <span class="badge badge-primary points">+100 points</span>
+                <span class="challenge-tag">Challenge</span>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <div id="content">
+          <div  #parent></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+ 
