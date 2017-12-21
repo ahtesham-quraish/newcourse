@@ -13,7 +13,7 @@ export class DocumentComponent implements OnInit {
   ngOnInit() {
   }
   getUrl(){
-    'https://view.officeapps.live.com/op/embed.aspx?src='+ this.content['url'];
+   return 'https://view.officeapps.live.com/op/embed.aspx?src='+ this.content['url'];
   }
 
 }
