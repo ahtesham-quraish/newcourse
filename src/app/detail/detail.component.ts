@@ -1,4 +1,4 @@
-import { Component,Input, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
+import { Component,Input, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver, Output, EventEmitter } from '@angular/core';
 declare var jquery:any;
 declare var $ :any;
 import * as jQuery from 'jquery';
@@ -22,6 +22,7 @@ export class DetailComponent implements OnInit {
   contentlist:any;
    ref = '';
   @Input() courseDetail:any;
+  @Output() messageEvent = new EventEmitter<string>();
   ComponentArray = [{"type": "slides", "component": SlidesComponent} , {"type": "pdf", "component": PdfComponent},
   {"type": "img", "component": ImgComponent},{"type": "video", "component": VideoComponent},
   {"type": "audio", "component": AudioComponent}, {"type": "document", "component": DocumentComponent},
@@ -78,6 +79,10 @@ export class DetailComponent implements OnInit {
           this.wind.nativeWindow.initAnchors();
         }.bind(this), 1000)
       }.bind(this), 1000);
+  }
+  back(){
+    this.messageEvent.emit('back');
+    console.log("?????????")
   }
 
 }

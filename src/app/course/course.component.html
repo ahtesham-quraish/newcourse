@@ -10,7 +10,7 @@
     </div>
   </header>
   <main id="main" role="main">
-      <app-detail [courseDetail]="courseDetail" *ngIf="showDetail"></app-detail>
+      <app-detail (messageEvent)="receiveMessage($event)" [courseDetail]="courseDetail" *ngIf="showDetail"></app-detail>
     <div class="container">
     <div class="row">
       <div class="col-sm-12">

@@ -27,6 +27,10 @@ export class CourseComponent implements OnInit {
     this.showDetail = true;
     this.courseDetail = this.courselist[index];
   }
+  receiveMessage(event){
+    console.log("back")
+    this.showDetail = false;
+  }
 
 
 }
