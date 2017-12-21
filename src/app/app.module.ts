@@ -21,7 +21,14 @@ import {VgCoreModule} from 'videogular2/core';
 import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
-import {SafeHtmlPipe} from '../app/service/safeHtml.component'
+import {SafeHtmlPipe} from '../app/service/safeHtml.component';
+import { FillintheblankComponent } from './questiontype/fillintheblank/fillintheblank.component';
+import { FillblanktableComponent } from './questiontype/fillblanktable/fillblanktable.component';
+import { MultiselectioncheckboxComponent } from './questiontype/multiselectioncheckbox/multiselectioncheckbox.component';
+import { SingleselectdropdownComponent } from './questiontype/singleselectdropdown/singleselectdropdown.component';
+import { SingleselectradiobuttonComponent } from './questiontype/singleselectradiobutton/singleselectradiobutton.component';
+import { TruefalsedropdownComponent } from './questiontype/truefalsedropdown/truefalsedropdown.component';
+import { TruefalseradionbuttonComponent } from './questiontype/truefalseradionbutton/truefalseradionbutton.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +43,14 @@ import {SafeHtmlPipe} from '../app/service/safeHtml.component'
     DocumentComponent,
     ImgComponent,
     TextComponent,
-    SlidesComponent
+    SlidesComponent,
+    FillintheblankComponent,
+    FillblanktableComponent,
+    MultiselectioncheckboxComponent,
+    SingleselectdropdownComponent,
+    SingleselectradiobuttonComponent,
+    TruefalsedropdownComponent,
+    TruefalseradionbuttonComponent
   ],
   imports: [
     BrowserModule,

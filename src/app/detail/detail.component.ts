@@ -10,6 +10,7 @@ import { DocumentComponent } from '../component/document/document.component';
 import { ImgComponent } from '../component/img/img.component';
 import { TextComponent } from '../component/text/text.component';
 import { SlidesComponent } from '../component/slides/slides.component';
+import {CourseListingServiceService} from '../service/course-listing-service.service'
 
 @Component({
   selector: 'app-detail',
@@ -28,7 +29,7 @@ export class DetailComponent implements OnInit {
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;
-  constructor(private wind: WindowRef, private componentFactoryResolver: ComponentFactoryResolver) { 
+  constructor(private wind: WindowRef, private componentFactoryResolver: ComponentFactoryResolver, private detailservice : CourseListingServiceService) { 
     
 
   }
@@ -38,6 +39,20 @@ export class DetailComponent implements OnInit {
     console.log(this.courseDetail , "detail")
     this.title = this.courseDetail.name;
     this.contentlist = this.courseDetail.content;
+    for(let i = 0 ; i < this.contentlist.length; i++){
+      if(this.contentlist[i].type == 'Question'){
+        let urlSplit = this.contentlist[i].url.split('qbank/');
+        this.detailservice.fetchQuestionData(urlSplit[1]).subscribe(
+          (data) => {
+            console.log("data question", urlSplit[1], data, i)
+            //this.question = data;
+            //this.type = this.content[$event.index].type;
+    
+          })
+      }
+    }
+
+ 
     for(let i = 0; i < this.courseDetail.content.length; i++ ){
       for(let j = 0; j < this.ComponentArray.length; j++){
         if(this.ComponentArray[j].type == this.courseDetail.content[i].type){

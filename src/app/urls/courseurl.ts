@@ -3,3 +3,4 @@
 // export let questionUrl: string = environment.apiUrl != 'undefined' ? environment.apiUrl + '/qbank/': 'https://cinch-gateway-develop.herokuapp.com/qbank/';
 
 export let allCourses : string =  'https://cinch-gateway-develop.herokuapp.com/course/aws3/Idrees_AWS/filter?page=0&size=100';
+export let questionUrl: string = 'https://cinch-gateway-develop.herokuapp.com/qbank/'
