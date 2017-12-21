@@ -78,7 +78,6 @@ export class DetailComponent implements OnInit {
           this.wind.nativeWindow.initAnchors();
         }.bind(this), 1000)
       }.bind(this), 1000);
-    
   }
 
 }
