@@ -637,12 +637,26 @@ audio {
 }
 
 #content img {
-  margin: 0 auto 1rem;
+  width: 100%;
 }
 
 #content .section {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
   overflow: hidden;
   padding: 10px 0;
+}
+
+#content .section.card {
+  padding: 10px 5px;
+  margin: 0 0 20px;
+  box-shadow: none;
+}
+
+#content .section.card .card {
+  margin: 0 -6px;
 }
 
 #content .section .card {

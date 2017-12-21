@@ -7,12 +7,23 @@
 	}
 	
 	img{
-		margin: 0 auto 1rem;
+		width: 100%;
 	}
 	
 	.section{
+		@include border-radius(0);
 		overflow: hidden;
 		padding: 10px 0;
+		
+		&.card{
+			padding: 10px 5px;
+			margin: 0 0 20px;
+			box-shadow: none;
+			
+			.card{
+				margin: 0 -6px;
+			}
+		}
 		
 		.card{
 			@include border-radius(0);
