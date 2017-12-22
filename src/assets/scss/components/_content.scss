@@ -5,7 +5,9 @@
 		font-size: 1rem;
 		padding-right: 20px;
 	}
-	
+	@include media('≥desktop') {
+		padding-right: 40px;
+	}
 	img{
 		width: 100%;
 	}
@@ -14,16 +16,7 @@
 		@include border-radius(0);
 		overflow: hidden;
 		padding: 10px 0;
-		
-		&.card{
-			padding: 10px 5px;
-			margin: 0 0 20px;
-			box-shadow: none;
-			
-			.card{
-				margin: 0 -6px;
-			}
-		}
+		margin: 0 0 20px;
 		
 		.card{
 			@include border-radius(0);
@@ -36,5 +29,17 @@
 				font-family: $font-family-sans-serif;
 			}
 		}
+	}
+}
+
+.course-detail{
+	margin-bottom: 20px;
+
+	.btn-holder{
+		overflow: hidden;
+		padding: 10px;
+		border-top: 1px solid rgba(black,.2);
+
+		@include media('≥desktop') {padding: 15px 20px;}
 	}
 }

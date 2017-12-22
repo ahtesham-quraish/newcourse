@@ -74,7 +74,7 @@ export class DetailComponent implements OnInit {
         this.ref.instance.index = i;
       }
         this.wind.nativeWindow.initFixedScrollBlock();
-        
+        this.wind.nativeWindow.initFixedSidebar();
         setTimeout(function(){
           this.wind.nativeWindow.initAnchors();
         }.bind(this), 1000)

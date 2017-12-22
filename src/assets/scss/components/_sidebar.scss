@@ -17,19 +17,19 @@
 				a{
 					display: block;
 					color: $very-dark-grayish-blue;
-					padding: 5px;
+					padding: 7px;
 					overflow: hidden;
 					border-left: 2px solid transparent;
 
 					&:hover{
-						background: $gray-lightest2;
+						background: darken($gray-lightest2,3%);
 						border-color: $dark-moderate-cyan;
 					}
 				}
 
 				&.active{
 					a{
-						background: $gray-lightest2;
+						background: darken($gray-lightest2,3%);
 						border-color: $dark-moderate-cyan;
 					}
 				}
@@ -63,6 +63,8 @@
 		&.fixed-position{
 			+ #content{
 				padding-right: 220px;
+				
+				@include media('≥desktop') {padding-right: 240px;}
 			}
 		}
 	}

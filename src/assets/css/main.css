@@ -79,6 +79,7 @@ button:hover {
 
 #main {
   padding-top: 20px;
+  position: relative;
 }
 
 @media (max-width: 575px) {
@@ -104,11 +105,52 @@ button:hover {
 .page-header {
   overflow: hidden;
   margin: -20px 0 20px;
-  background: white;
-  padding: 10px 0;
+  background: #4e8db6;
+  padding: 20px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .page-header {
+    position: static !important;
+  }
+}
+
+.page-header.fixed-position {
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .page-header.fixed-position {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header.fixed-position + .detail-container {
+    padding-top: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-header.fixed-position + .detail-container #content {
+    padding-right: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  .page-header.fixed-position + .detail-container #content {
+    padding-right: 240px;
+  }
+}
+
+.page-header.fixed-position + .detail-container #sidebar {
+  position: absolute;
+  right: 15px;
 }
 
 .page-header .btn-back {
@@ -116,13 +158,17 @@ button:hover {
   letter-spacing: 0;
   display: inline-block;
   vertical-align: top;
-  font-size: 1rem;
   font-family: "MuseoSans-700", sans-serif;
-  margin: 0 10px 10px;
+  margin: 0 10px 5px;
+  color: white;
+}
+
+.page-header .btn-back:hover {
+  color: #d7d7de;
 }
 
 .page-header .btn-back .fa {
-  font-size: 1.5rem;
+  font-size: 1rem;
   vertical-align: text-bottom;
 }
 
@@ -131,10 +177,11 @@ button:hover {
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   border-radius: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
   display: block;
   margin: 0 auto 10px;
   width: 100px;
+  background: white;
 }
 
 @media (min-width: 576px) {
@@ -158,25 +205,21 @@ button:hover {
 
 .page-header .header-text .sub-head {
   display: block;
-  color: rgba(111, 111, 111, 0.75);
+  color: white;
 }
 
 .page-header .header-text h1 {
-  margin: 5px 0;
+  margin: 2px 0;
+}
+
+@media (min-width: 576px) {
+  .page-header .header-text h1 {
+    font-size: 1.8rem;
+  }
 }
 
 .page-header .header-text .description {
   display: block;
-}
-
-.page-header .header-text time {
-  display: block;
-  color: rgba(111, 111, 111, 0.75);
-  font-family: "MuseoSans-700", sans-serif;
-}
-
-.page-header .header-text time span {
-  font-family: "MuseoSans-300", sans-serif;
 }
 
 .page-header .header-text .holder {
@@ -188,13 +231,36 @@ button:hover {
   overflow: hidden;
 }
 
-.page-header .footer .icons-list {
-  float: right;
-  margin: 0 0 0 5px;
+.page-header .footer .holder {
+  margin: 0;
 }
 
-@media (min-width: 576px) {
+.page-header .footer time {
+  display: block;
+  padding: 0 0 5px;
+  color: white;
+  font-family: "MuseoSans-700", sans-serif;
+}
+
+.page-header .footer time span {
+  font-family: "MuseoSans-300", sans-serif;
+}
+
+@media (min-width: 768px) {
+  .page-header .footer time {
+    float: left;
+    padding: 6px 0;
+  }
+}
+
+.page-header .footer .icons-list {
+  float: left;
+  margin: 0 5px 0 0;
+}
+
+@media (min-width: 768px) {
   .page-header .footer .icons-list {
+    float: right;
     margin: 0 0 0 20px;
   }
 }
@@ -204,31 +270,25 @@ button:hover {
 }
 
 .page-header .footer .icons-list li .btn {
-  background: #f3f3f5;
-}
-
-@media (min-width: 576px) {
-  .page-header .footer .icons-list li .btn {
-    width: 36px;
-    height: 36px;
-    font-size: 22px;
-  }
+  background: white;
 }
 
 .page-header .footer .tags-list {
   overflow: hidden;
 }
 
+@media (max-width: 767px) {
+  .page-header .footer .tags-list {
+    text-align: left;
+  }
+}
+
 .page-header .footer .tags-list li {
   padding-bottom: 3px;
 }
 
-@media (min-width: 576px) {
-  .page-header .footer .tags-list li .btn {
-    padding: 7px;
-    font-size: 1rem;
-    min-width: 50px;
-  }
+.page-header .footer .tags-list li .btn {
+  background: white;
 }
 
 video,
@@ -288,12 +348,6 @@ audio {
 
 .card .card-block {
   padding: 0.875rem;
-}
-
-@media (max-width: 767px) {
-  .card .card-block {
-    padding: 0.5rem;
-  }
 }
 
 .card .header {
@@ -358,22 +412,6 @@ audio {
 .card .footer .tags-list {
   float: right;
   width: calc(100% - 80px);
-}
-
-.card.course-detail {
-  margin-bottom: 20px;
-}
-
-.card.course-detail .btn-holder {
-  overflow: hidden;
-  padding: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-@media (min-width: 992px) {
-  .card.course-detail .btn-holder {
-    padding: 15px 20px;
-  }
 }
 
 .dropdown .dropdown-toggle {
@@ -590,16 +628,16 @@ audio {
   #sidebar ul li a {
     display: block;
     color: #333e48;
-    padding: 5px;
+    padding: 7px;
     overflow: hidden;
     border-left: 2px solid transparent;
   }
   #sidebar ul li a:hover {
-    background: #f3f3f5;
+    background: #ebebee;
     border-color: #4c9688;
   }
   #sidebar ul li.active a {
-    background: #f3f3f5;
+    background: #ebebee;
     border-color: #4c9688;
   }
   #sidebar ul li.add {
@@ -631,6 +669,12 @@ audio {
   }
 }
 
+@media (min-width: 768px) and (min-width: 992px) {
+  #sidebar.fixed-position + #content {
+    padding-right: 240px;
+  }
+}
+
 #content {
   overflow: hidden;
 }
@@ -639,6 +683,12 @@ audio {
   #content {
     font-size: 1rem;
     padding-right: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  #content {
+    padding-right: 40px;
   }
 }
 
@@ -653,16 +703,7 @@ audio {
   border-radius: 0;
   overflow: hidden;
   padding: 10px 0;
-}
-
-#content .section.card {
-  padding: 10px 5px;
   margin: 0 0 20px;
-  box-shadow: none;
-}
-
-#content .section.card .card {
-  margin: 0 -6px;
 }
 
 #content .section .card {
@@ -676,6 +717,22 @@ audio {
   font-size: 50%;
   vertical-align: middle;
   font-family: "MuseoSans-300", sans-serif;
+}
+
+.course-detail {
+  margin-bottom: 20px;
+}
+
+.course-detail .btn-holder {
+  overflow: hidden;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 992px) {
+  .course-detail .btn-holder {
+    padding: 15px 20px;
+  }
 }
 
 .questions-list {

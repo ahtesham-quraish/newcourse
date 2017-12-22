@@ -1,21 +1,68 @@
 // page init
 jQuery(function(){
-	console.log("fahem butt>>>>>>")
-	initFixedScrollBlock();
+	// initFixedScrollBlock();
 	initAnchors();
+	initFixedSidebar();
 });
 
+
+function initFixedSidebar(){
+	var body = $(document),
+		$holder = $(window),
+		$wrapper = $('#wrapper'),
+		$header = $('#header'),
+		$pageHeader = $('.page-header'),
+		$pageContainer = $('.detail-container'),
+		$sidebar = $('#sidebar');
+	
+	body.on('scroll', fixedSidebarPosition);
+	$holder.on('resize', fixedSidebarPosition);
+	
+	function fixedSidebarPosition(){
+
+		var headerHeight = $pageHeader.outerHeight();
+		
+		if(body.scrollTop() > $header.outerHeight()){
+			$pageContainer.css({
+				paddingTop : headerHeight + 'px'
+			});
+			
+			jQuery('#wrapper').fixedScrollBlock({
+				slideBlock: '#sidebar',
+				positionType: 'fixed',
+				extraTop: $pageHeader.outerHeight() + 10,
+				fixedOnlyIfFits: false
+			});
+			   
+			
+			
+		}else{
+			$pageContainer.css({
+				paddingTop : 0 + 'px'
+			});
+			
+			$sidebar.css({
+				top : 0 + 'px'
+			});
+		}
+	}
+	
+}
+
+
 // initialize fixed blocks on scroll
- function initFixedScrollBlock() {
-	jQuery('.card').fixedScrollBlock({
-		slideBlock: '#sidebar',
+function initFixedScrollBlock() {
+	
+	jQuery('#wrapper').fixedScrollBlock({
+		slideBlock: '.page-header',
 		positionType: 'fixed',
-		extraTop: 10
+		extraTop: 0,
+		fixedOnlyIfFits: false
 	});
 }
 
 // initialize smooth anchor links
- function initAnchors() {
+function initAnchors() {
 	new SmoothScroll({
 		anchorLinks: 'a[href^="#"]:not([href="#"])',
 		activeClasses: 'parent',
@@ -329,7 +376,22 @@ jQuery(function(){
 			} else if (typeof this.options.extraOffset === 'function') {
 				blockOffset -= this.options.extraOffset(block);
 			}
-			return { top: blockOffset };
+			
+			
+			var body = $(document),
+				$holder = $(window),
+				$wrapper = $('#wrapper'),
+				$pageHeader = $('.page-header'),
+				headerHeight = $pageHeader.outerHeight();
+			
+			body.on('scroll', headerHeightFunction);
+			$holder.on('resize', headerHeightFunction);
+			
+			function headerHeightFunction(){
+				headerHeight = $pageHeader.outerHeight();
+			}
+			
+			return { top: blockOffset - headerHeight };
 		},
 		attachEvents: function() {
 			var self = this;

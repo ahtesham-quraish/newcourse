@@ -1,5 +1,6 @@
 #main{
 	padding-top: 20px;
+	position: relative;
 	
 	h1,
 	h2{@include media('<small-tablet') {font-size: 1.5rem;}}
@@ -11,30 +12,60 @@
 .page-header{
 	overflow: hidden;
 	margin: -20px 0 20px;
-	background: white;
-	padding: 10px 0;
+	background: $blue;
+	padding: 20px 0;
 	border-top: 1px solid rgba(black,0.1);
 	-webkit-box-shadow: 0 2px 2px 0 rgba(black,0.1);
 	box-shadow: 0 2px 2px 0 rgba(black,0.1);
+	z-index: 99;
+	color: white;
+	
+	@include media('<tablet') {
+		position: static !important;
+	}
+	
+	&.fixed-position{
+		right: 0;
+		@include media('≥tablet') {margin-top: 0;}
+		
+		+ .detail-container{
+			
+			@include media('<tablet') {padding-top: 0 !important;}
+			
+			#content{
+				@include media('≥tablet') {padding-right: 220px;}
+
+				@include media('≥desktop') {padding-right: 240px;}
+			}
+
+			#sidebar{
+				position: absolute;
+				right: 15px;
+			}
+		}
+	}
 	
 	.btn-back{
 		@include v-align(top);
-		font-size: 1rem;
 		font-family: "MuseoSans-700", sans-serif;
-		margin: 0 10px 10px;
+		margin: 0 10px 5px;
+		color: white;
+		
+		&:hover{color: darken($gray-lightest2,10%);}
 		
 		.fa{
-			font-size: 1.5rem;
+			font-size: 1rem;
 			vertical-align: text-bottom;
 		}
 	}
 	
 	.img-holder{
 		@include border-radius(100%);
-		border: 1px solid rgba(black,.2);
+		border: 1px solid white;
 		display: block;
 		margin: 0 auto 10px;
 		width: 100px;
+		background: white;
 		
 		@include media('≥small-tablet') {
 			float: left;
@@ -52,25 +83,18 @@
 		
 		.sub-head{
 			display: block;
-			color: rgba($very-dark-gray,.75);
+			color: white;
 		}
 		
 		h1{
 			@extend %ellipsis;
-			margin: 5px 0;
+			margin: 2px 0;
+			@include media('≥small-tablet') {font-size: 1.8rem;}
 		}
 		
 		.description{
 			@extend %ellipsis;
 			display: block;
-		}
-		
-		time{
-			display: block;
-			color: rgba($very-dark-gray,.75);
-			font-family: $headings-font-family;
-			
-			span{font-family: $font-family-sans-serif;}
 		}
 		
 		.holder{
@@ -81,24 +105,42 @@
 	
 	.footer{
 		overflow: hidden;
+		.holder{margin: 0;}
+		
+		time{
+			display: block;
+			padding: 0 0 5px;
+			color: white;
+			font-family: $headings-font-family;
+			
+			span{font-family: $font-family-sans-serif;}
+			
+			@include media('≥tablet') {
+				float: left;
+				padding: 6px 0;
+			}
+		}
 		
 		.icons-list{
-			float: right;
-			margin: 0 0 0 5px;
+			float: left;
+			margin: 0 5px 0 0;
 			
-			@include media('≥small-tablet') {margin: 0 0 0 20px;}
+			@include media('≥tablet') {
+				float: right;
+				margin: 0 0 0 20px;
+			}
 			
 			li{
 				padding-bottom: 3px;
 				
 				.btn{
-					background: $gray-lightest2;
+					background: white;
 					
-					@include media('≥small-tablet') {
-						width: 36px;
-						height: 36px;
-						font-size: 22px;
-					}
+//					@include media('≥small-tablet') {
+//						width: 36px;
+//						height: 36px;
+//						font-size: 22px;
+//					}
 					
 				}
 			}
@@ -106,15 +148,18 @@
 		.tags-list{
 			overflow: hidden;
 			
+			@include media('<tablet') {text-align: left;}
+			
 			li{
 				padding-bottom: 3px;
 				
 				.btn{
-					@include media('≥small-tablet') {
-						padding: 7px;
-						font-size: 1rem;
-						min-width: 50px;
-					}
+					background: white;
+//					@include media('≥small-tablet') {
+//						padding: 7px;
+//						font-size: 1rem;
+//						min-width: 50px;
+//					}
 				}
 			}
 		}
