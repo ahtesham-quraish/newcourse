@@ -8,6 +8,13 @@ body {
 	min-width: $base-min-width;
 }
 
+b,
+strong,
+table th {
+	font-family: $headings-font-family;
+	font-weight: normal;
+}
+
 a,
 button {
 	@include transition(all 0.25s linear);

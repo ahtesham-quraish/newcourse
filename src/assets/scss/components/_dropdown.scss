@@ -1,4 +1,6 @@
 .dropdown{
+	.dropdown-backdrop{display: none;}
+
 	.dropdown-toggle{
 		padding-right: 20px;
 		padding-left: 5px;
@@ -30,6 +32,15 @@
 			&:before{
 				cursor: pointer;
 				content: "\f106";
+			}
+			
+			.drop-icon{
+				.fa{
+					&:before{
+						cursor: pointer;
+						content: "\f106";
+					}
+				}
 			}
 		}
 		.dropdown-menu{
@@ -81,10 +92,18 @@
 	text-transform: capitalize;
 	background: $gray-lightest2;
 	min-width: 200px;
+	width: auto;
 	max-height: 210px;
 	border: 0;
 	box-shadow: 1px 1px 5px rgba(black, 0.1);
 	@include border-radius(0);
 	@include transition(transform .15s cubic-bezier(.3,0,0,1.5));
 	@include scale(0.8);
+}
+
+.select-block{
+	.dropdown-menu{
+		right: 30px;
+		left: 0;
+	}
 }

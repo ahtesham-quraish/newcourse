@@ -1,0 +1,189 @@
+
+.custom-form [type="radio"],
+.custom-form [type="checkbox"]{
+	position:fixed;
+	left:0;
+	top:0;
+	opacity:0;
+	z-index: -1;
+}
+.custom-form label {
+	display:inline-block;
+	vertical-align: top;
+	position: relative;
+	padding: 0 0 0 20px;
+}
+.custom-form label{padding-right: 5px;}
+.custom-form .fake-input{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin: -8px 0 0 0;
+	width:16px;
+	height:16px;
+	border:1px solid $dark-grayish-blue3;
+}
+.custom-form .tick-item .fake-input{
+	width: 20px;
+	height: 20px;
+	margin: -10px 0 0;
+	@include border-radius(100%);
+}
+.custom-form [type=radio] + .fake-input{@include border-radius(100%);}
+
+.custom-form [type="checkbox"] + .fake-input:before{
+	@include transition(all 0.2s linear);
+	position:absolute;
+	top:50%;
+	left:50%;
+	opacity: 0;
+	margin:-6px 0 0 -6px;
+	content: "\f00c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: $dark-moderate-cyan;
+    font-size: 12px;
+	line-height: 1;
+    padding: 0;
+	visibility: hidden;
+}
+
+.custom-form [type="radio"] + .fake-input:before{
+	@include transition(all 0.2s linear);
+	@include border-radius(100%);
+	content:'';
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	bottom: 3px;
+	left: 3px;
+	background: $dark-moderate-cyan;
+	opacity: 0;
+	visibility: hidden;
+}
+.custom-form .tick-item [type="checkbox"] + .fake-input:before{
+	color: white;
+	z-index: 2;
+}
+.custom-form .tick-item [type="checkbox"] + .fake-input:after{
+	@include transition(all 0.2s linear);
+	@include border-radius(100%);
+	content:'';
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	bottom: -1px;
+	left: -1px;
+	background: $dark-moderate-cyan;
+	opacity: 0;
+	visibility: hidden;
+}
+.custom-form .tick-item [type="radio"] + .fake-input:after{
+	@include transition(all 0.2s linear);
+	position:absolute;
+	top:50%;
+	left:50%;
+	opacity: 0;
+	margin:-6px 0 0 -6px;
+	content: "\f00c";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: white;
+    font-size: 12px;
+	line-height: 1;
+    padding: 0;
+	visibility: hidden;
+}
+
+.custom-form .tick-item [type="radio"] + .fake-input:before{
+	left: -1px;
+	right: -1px;
+	top: -1px;
+	bottom: -1px;
+}
+
+.custom-form [type="radio"]:checked + .fake-input:before,
+.custom-form [type="checkbox"]:checked + .fake-input:before,
+.custom-form .tick-item [type="radio"]:checked + .fake-input:after,
+.custom-form .tick-item [type="checkbox"]:checked + .fake-input:after{
+	@include transition(all 0.2s linear);
+	opacity:1;
+	visibility: visible;
+}
+
+.selected-row .custom-form [type="radio"]+ .fake-input:before,
+.selected-row .custom-form .tick-item [type="radio"] + .fake-input:after,
+.selected-row .custom-form [type="checkbox"]+ .fake-input:before,
+.selected-row .custom-form .tick-item [type="checkbox"] + .fake-input:after{
+	@include transition(all 0.2s linear);
+	opacity:1;
+	visibility: visible;
+}
+
+.custom-form [type="radio"]:checked ~ .fake-label,
+.custom-form [type="checkbox"]:checked ~ .fake-label {}
+
+.custom-form input:disabled + .fake-input,
+.custom-form input:disabled ~ .fake-label{opacity: .5;}
+
+.rad-holder{
+	&.rad-success{
+		input.switch[type="checkbox"]{
+			+ div{
+				background: $moderate-cyan;
+				border-color: $dark-moderate-cyan;
+				
+				&:before{background: white;}
+			}
+		}
+	}
+	
+	&.rad-default{
+		input.switch[type="checkbox"]{
+			+ div{
+				background: $grayish-blue3;
+				border-color: $grayish-blue;
+				
+				&:before{background: white;}
+			}
+		}
+	}
+}
+
+.custom-chk{
+	@include vertical-align(100%, middle, before);
+	@include border-radius(100%);
+	@include v-align(top);
+	width: 30px;
+	height: 30px;
+	color: $gray-light4;
+	border: 1px solid $grayish-blue6;
+	background: $gray-lightest2;
+	@include transition(all 0.25s linear);
+	
+	> span{
+		@include transition(all 0.25s linear);
+		opacity: 0;
+		visibility: hidden;
+		font-size: 12px;
+		line-height: 1;
+	}
+}
+
+.selected{
+	.custom-chk{
+		@include transition(all 0.25s linear);
+		background: $moderate-cyan;
+		border-color: $moderate-cyan;
+		
+		> span{
+			@include transition(all 0.25s linear);
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
