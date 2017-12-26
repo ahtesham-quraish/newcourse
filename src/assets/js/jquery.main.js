@@ -41,7 +41,7 @@ function initFixedSidebar(){
 				paddingTop : 0 + 'px'
 			});
 			
-			$sidebar.css({
+			$sidebar.css({ 
 				top : 0 + 'px'
 			});
 		}

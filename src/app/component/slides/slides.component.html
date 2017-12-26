@@ -1,25 +1,26 @@
 <div attr.id="{{'tab'+index}}" class="section" > 
     <h1>{{content.name}}</h1>
-    <div id="audioslideshow" class="audio-slideshow" attr.data-audio="{{audio}}" attr.data-audio-duration="{{duration}}">
+    <div class="audio-slides">
+        <div id="audioslideshow" class="audio-slideshow" attr.data-audio="{{audio}}" attr.data-audio-duration="{{duration}}">
             <div *ngFor="let img of image; let i = index"  class="audio-slides">
                 <img [src]="img.image" alt="[Dalen, Telemarken (i.e, Telemark), Norway] (LOC)" 
                 attr.data-thumbnail="http://www.makeathumbnail.com/thumbnails/image579144.jpg" 
                 attr.data-slide-time="{{img.slidetime}}">
             </div>
-            <div class="audio-control-interface">
-                <div class="play-pause-container full">
-                    <a href="javascript:;" class="btn-action audio-play" tabindex="1">
+            <div class="audio-control-interface video-block">
+                <div class="play-pause-container video">
+                    <a href="javascript:;" class="btn btn-action btn-play audio-play" tabindex="1">
                         <span class="fa fa-play"></span>
                     </a>
-                    <a href="javascript:;" class="btn-action audio-pause" tabindex="1">
+                    <a href="javascript:;" class="btn btn-action btn-play audio-pause" tabindex="1">
                         <span class="fa fa-pause"></span>
                     </a>
                 </div>
                 <div class="play-pause-container add">
-                    <a href="javascript:;" class="audio-play" tabindex="1">
+                    <a href="javascript:;" class="btn btn-play audio-play" tabindex="1">
                         <span class="fa fa-play"></span>
                     </a>
-                    <a href="javascript:;" class="audio-pause" tabindex="1">
+                    <a href="javascript:;" class="btn btn-play audio-pause" tabindex="1">
                         <span class="fa fa-pause"></span>
                     </a>
                 </div>
@@ -36,7 +37,7 @@
 						</div>
 					</div>
                 </div>
-                <div class="volume" title="Set volume">
+                <div class="volume hidden" title="Set volume">
                     <span class="fa fa-volume-down"></span>
                     <div class="volume-block">
                         <div class="progress-holder">
@@ -49,5 +50,6 @@
             </div>
         </div>
         <div class="dispose" style="display:hidden"><div></div>
+    </div>
   </div>
   
