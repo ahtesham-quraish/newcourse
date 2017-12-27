@@ -61,7 +61,7 @@
         <aside id="sidebar">
           <h6>Topics</h6>
           <ul class="list-unstyled" >
-              <li *ngFor="let c of contentlist; let i = index"><a attr.href="{{'#tab'+i}}" *ngIf="c.type != 'Question'" >{{c.name}}</a></li>
+              <li *ngFor="let c of contentlist; let i = index"><a attr.href="{{'#tab'+i}}">{{c.name}}</a></li>
             <!-- <li><a href="#tab1">Learning Objectives</a></li>
             <li><a href="#tab2">Welcome to Your Lightning Experience Rollout</a></li>
             <li><a href="#tab3">What It Takes to Go Live</a></li>

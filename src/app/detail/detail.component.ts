@@ -34,7 +34,11 @@ export class DetailComponent implements OnInit {
   ComponentArray = [{"type": "slides", "questiontype": "" ,"component": SlidesComponent} , {"type": "pdf", "questiontype": "" , "component": PdfComponent},
   {"type": "img", "questiontype": "" ,"component": ImgComponent},{"type": "video", "questiontype": "" ,"component": VideoComponent},
   {"type": "audio", "questiontype": "" ,"component": AudioComponent}, {"type": "document", "questiontype": "" ,"component": DocumentComponent},
-  {"type": "text", "questiontype": "" ,"component": TextComponent}, {"type": "Question","questiontype": "TRUE_FALSE_SELECT" , "component": TruefalsedropdownComponent}];
+  {"type": "text", "questiontype": "" ,"component": TextComponent}, {"type": "Question","questiontype": "TRUE_FALSE_SELECT" , "component": TruefalsedropdownComponent},
+  {"type": "Question","questiontype": "FILL_BLANK" , "component": FillintheblankComponent},
+  {"type": "Question","questiontype": "TRUE_FALSE_RADIO" , "component": TruefalseradionbuttonComponent},
+  {"type": "Question","questiontype": "SINGLE_SELECT_RADIO" , "component": SingleselectradiobuttonComponent},
+  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": SingleselectdropdownComponent}];
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;

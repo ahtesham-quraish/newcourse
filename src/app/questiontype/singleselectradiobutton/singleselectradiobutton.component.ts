@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-singleselectradiobutton',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class SingleselectradiobuttonComponent implements OnInit {
 
   constructor() { }
-
+  @Input() content: any;
+  question : any 
   ngOnInit() {
+    this.question = this.content['detail'];
   }
 
 }

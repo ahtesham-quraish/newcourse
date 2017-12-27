@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-singleselectdropdown',
@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class SingleselectdropdownComponent implements OnInit {
 
   constructor() { }
-
+  @Input() content: any;
+  question : any 
   ngOnInit() {
+    this.question = this.content['detail'];
   }
 
 }

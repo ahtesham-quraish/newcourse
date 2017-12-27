@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-12">
-    <h3>Single Select Drop Down</h3>
+    <h3 [innerHTML]="question.question | safeHtml"></h3>
     <div class="row">
       <div class="col-sm-6">
         <div class="select-block">
@@ -9,8 +9,9 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <ul class="drop-list">
-                <li><a href="#">true</a></li>
-                <li><a href="#">false</a></li>
+                  <li *ngFor="let n of question['choices'] let i = index">
+                      <a href="javascript:void(0)" (click)="onOptionChanged(n.answer,i)" class="nav-link">{{n.answer}}</a>
+                  </li>
               </ul>
             </div>
           </div>

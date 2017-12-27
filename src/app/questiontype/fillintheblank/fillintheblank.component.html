@@ -1,9 +1,11 @@
 <div class="row">
   <div class="col-sm-12">
-    <h3>Fill in the Blank</h3>
+    <h3 [innerHTML]="question.question | safeHtml"></h3>
     <div class="row">
       <div class="col-sm-6">
-        <textarea cols="30" rows="10" class="form-control text-area"></textarea>
+          <div class="col-sm-8">
+              <input  (ngModelChange)="onOptionChanged($event)"  class="form-control">
+            </div>
       </div>
     </div>
   </div>
