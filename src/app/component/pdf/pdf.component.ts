@@ -10,9 +10,14 @@ export class PdfComponent implements OnInit {
 
   constructor() { }
   content:any;
+  question : any 
   @Input() index: any;
   ngOnInit() {
     console.log("pdf", this.content)
+  }
+  onOptionChanged(value:string, index:number){
+    
+  
   }
 
 }

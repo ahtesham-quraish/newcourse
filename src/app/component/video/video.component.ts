@@ -10,7 +10,12 @@ export class VideoComponent implements OnInit {
   constructor() { }
   content:any;
   @Input() index: any;
+  question : any 
   ngOnInit() {
+  }
+  onOptionChanged(value:string, index:number){
+    
+  
   }
 
 }

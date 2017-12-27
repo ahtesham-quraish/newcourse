@@ -12,6 +12,7 @@ export class SlidesComponent implements OnInit {
   constructor() { }
   content= {};
   @Input() index: any;
+  question : any 
   image:any;
   audio:any;
   vedioUrl:any;
@@ -81,5 +82,9 @@ export class SlidesComponent implements OnInit {
     }
     return seconds;
    }
+   onOptionChanged(value:string, index:number){
+    
+  
+  }
 
 }

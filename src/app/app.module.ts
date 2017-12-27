@@ -28,7 +28,8 @@ import { MultiselectioncheckboxComponent } from './questiontype/multiselectionch
 import { SingleselectdropdownComponent } from './questiontype/singleselectdropdown/singleselectdropdown.component';
 import { SingleselectradiobuttonComponent } from './questiontype/singleselectradiobutton/singleselectradiobutton.component';
 import { TruefalsedropdownComponent } from './questiontype/truefalsedropdown/truefalsedropdown.component';
-import { TruefalseradionbuttonComponent } from './questiontype/truefalseradionbutton/truefalseradionbutton.component'
+import { TruefalseradionbuttonComponent } from './questiontype/truefalseradionbutton/truefalseradionbutton.component';
+import { SequenceComponent } from './questiontype/sequence/sequence.component'
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { TruefalseradionbuttonComponent } from './questiontype/truefalseradionbu
     SingleselectdropdownComponent,
     SingleselectradiobuttonComponent,
     TruefalsedropdownComponent,
-    TruefalseradionbuttonComponent
+    TruefalseradionbuttonComponent,
+    SequenceComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,7 @@ import { TruefalseradionbuttonComponent } from './questiontype/truefalseradionbu
     VgBufferingModule,
     VgOverlayPlayModule
   ],
-  entryComponents: [AppComponent, AudioComponent, VideoComponent, PdfComponent, SlidesComponent, TextComponent, ImgComponent, DocumentComponent],
+  entryComponents: [AppComponent, AudioComponent, VideoComponent, PdfComponent, SlidesComponent, TextComponent, ImgComponent, DocumentComponent, TruefalsedropdownComponent],
   providers: [CourseListingServiceService, WindowRef],
   bootstrap: [AppComponent]
 })

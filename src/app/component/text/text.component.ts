@@ -10,7 +10,12 @@ export class TextComponent implements OnInit {
   constructor() { }
   content= {};
   @Input() index: any;
+  question : any 
   ngOnInit() {
+  }
+  onOptionChanged(value:string, index:number){
+    
+  
   }
 
 }

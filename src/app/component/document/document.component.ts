@@ -10,10 +10,15 @@ export class DocumentComponent implements OnInit {
   constructor() { }
   content= {};
   @Input() index: any;
+  question : any 
   ngOnInit() {
   }
   getUrl(){
    return 'https://view.officeapps.live.com/op/embed.aspx?src='+ this.content['url'];
+  }
+  onOptionChanged(value:string, index:number){
+    
+  
   }
 
 }
