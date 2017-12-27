@@ -133,6 +133,8 @@ button:hover {
 
 @media (min-width: 768px) {
   .page-header.fixed-position {
+    position: fixed !important;
+    top: 0 !important;
     margin-top: 0;
   }
 }
@@ -739,6 +741,10 @@ audio {
   font-size: 50%;
   vertical-align: middle;
   font-family: "MuseoSans-300", sans-serif;
+}
+
+#content .select-block {
+  margin-left: 2px;
 }
 
 .course-detail {
