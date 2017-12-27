@@ -3,118 +3,31 @@
     <h3>Multiple Fill in the Blank</h3>
     <table class="table fill-in-table no-border">
       <thead>
-        <tr>
-          <th>
-            <div class="cell-holder">
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="Item Type" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="Act. Cost" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="Act. Revenue" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="($) Dif" class="form-control"> </div>
-              </div>
-            </div>
-          </th>
-        </tr>
+          <tr *ngFor="let h of head let i = index" >
+              <th >
+                <div class="cell-holder">
+                  <div class="cell" style="width: 50%;">Dr</div>
+                  <div class="cell" style="width: 50%;">Cr</div>
+                </div>
+              </th>
+            </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <div class="cell-holder">
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="Total Service" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="45500.45" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="86500.45" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="40055.23" class="form-control"> </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cell-holder">
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="Total Other Chrages" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="5500.45" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="6560.00" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="1039.45" class="form-control"> </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cell-holder">
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="Total Number Item" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="99" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="9" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder">
-                  <input type="text" value="90" class="form-control"> </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cell-holder">
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="TOTAL" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="90" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="90" class="form-control"> </div>
-              </div>
-              <div class="cell">
-                <div class="input-holder input-active">
-                  <input type="text" value="90" class="form-control"> </div>
-              </div>
-            </div>
-          </td>
-        </tr>
+          <tr *ngFor="let row of tail let i = index" class=" row-width">
+              <td >
+                <div class="cell-holder row-width">
+                  <div *ngFor="let col of row.columns let j = index" class="cell" style="width: 50%;">
+                    <div class="input-holder input-active" *ngIf="col.type == 'ANSWER'">
+                      <input  (ngModelChange)="onChangeOption(i , j);" type="text" placeholder="Enter Answer" class="form-control">
+                    </div>
+                    <div class="input-holder" *ngIf="col.type == 'TEXT'">
+                      <span class="answer-text">{{col.value}}</span>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
       </tbody>
     </table>
   </div>

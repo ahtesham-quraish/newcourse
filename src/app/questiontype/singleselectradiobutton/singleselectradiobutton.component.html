@@ -5,7 +5,7 @@
         <li class="list-inline-item" *ngFor="let n of question['choices'] let i = index">
             <label for={{i}}>
               <input type="radio" 
-              (change)="onOptionChanged(i)"  id={{i}} name="group1"  [checked]="isChecked == i" value="on" >
+              (change)="onOptionChanged(n.answer,i)"  id={{i}} name={{question.id}}  [checked]="isChecked == i" value="on" >
               <span class="fake-input"></span>
               <span class="fake-label">{{n.answer}}</span>
             </label>

@@ -18,6 +18,7 @@ export class TruefalseradionbuttonComponent implements OnInit {
     
     
     let choices = this.question['choices'];
+    console.log("value", value , index , 'true false radio button')
 
     //var correct_index = choices.findIndex(x => x.isCorrect == true);
     // if(choices[index]['isCorrect'] === true){
@@ -32,5 +33,8 @@ export class TruefalseradionbuttonComponent implements OnInit {
     //   // this.selectAnswer(index ,this.current_slide ,0)
     // }
 }
+  getID(id, i){
+    return id+i;
+  }
 
 }

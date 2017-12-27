@@ -38,7 +38,9 @@ export class DetailComponent implements OnInit {
   {"type": "Question","questiontype": "FILL_BLANK" , "component": FillintheblankComponent},
   {"type": "Question","questiontype": "TRUE_FALSE_RADIO" , "component": TruefalseradionbuttonComponent},
   {"type": "Question","questiontype": "SINGLE_SELECT_RADIO" , "component": SingleselectradiobuttonComponent},
-  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": SingleselectdropdownComponent}];
+  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": SingleselectdropdownComponent},
+  {"type": "Question","questiontype": "FILL_BLANK_TABLE" , "component": FillblanktableComponent},
+  {"type": "Question","questiontype": "MULTI_SELECT" , "component": MultiselectioncheckboxComponent}];
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;
@@ -107,6 +109,7 @@ export class DetailComponent implements OnInit {
         }
       }
     }
+    console.log(this.courseDetail.content)
     
     setTimeout(function(){
       // at this point we want the "another-child" component to be rendered into the app.component:

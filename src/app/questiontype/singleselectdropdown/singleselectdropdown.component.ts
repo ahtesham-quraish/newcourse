@@ -13,5 +13,4 @@ export class SingleselectdropdownComponent implements OnInit {
   ngOnInit() {
     this.question = this.content['detail'];
   }
-
 }

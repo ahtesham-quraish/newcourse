@@ -64,7 +64,7 @@ import { SequenceComponent } from './questiontype/sequence/sequence.component'
     VgBufferingModule,
     VgOverlayPlayModule
   ],
-  entryComponents: [AppComponent, AudioComponent,SingleselectdropdownComponent, SingleselectradiobuttonComponent, TruefalseradionbuttonComponent,VideoComponent, PdfComponent,FillintheblankComponent, SlidesComponent, TextComponent, ImgComponent, DocumentComponent, TruefalsedropdownComponent],
+  entryComponents: [AppComponent, AudioComponent, MultiselectioncheckboxComponent,FillblanktableComponent,SingleselectdropdownComponent, SingleselectradiobuttonComponent, TruefalseradionbuttonComponent,VideoComponent, PdfComponent,FillintheblankComponent, SlidesComponent, TextComponent, ImgComponent, DocumentComponent, TruefalsedropdownComponent],
   providers: [CourseListingServiceService, WindowRef],
   bootstrap: [AppComponent]
 })
