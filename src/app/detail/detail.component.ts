@@ -1,4 +1,4 @@
-import { Component,Input, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver, Output, EventEmitter } from '@angular/core';
+import { Component,Input, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 declare var jquery:any;
 declare var $ :any;
 import * as jQuery from 'jquery';
@@ -56,18 +56,21 @@ export class DetailComponent implements OnInit {
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;
-  constructor(private wind: WindowRef,
+  constructor(private wind: WindowRef,private cd: ChangeDetectorRef,
      private componentFactoryResolver: ComponentFactoryResolver, 
      private detailservice : CourseListingServiceService,
      private qservice : QuestionSubmitService) { 
     
 
   }
-
+  ngAfterViewInit() {
+    this.image = this.courseDetail.img
+    this.cd.detectChanges();
+}
   ngOnInit() {
     this.title = this.courseDetail.name;
     this.contentlist = this.courseDetail.content;
-    this.image = this.courseDetail.img
+    
     console.log(this.courseDetail)
     let questionExist = false;
     let questionLength = [];

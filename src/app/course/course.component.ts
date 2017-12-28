@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 import {CourseListingServiceService} from '../service/course-listing-service.service';
 import {DetailComponent} from '../detail/detail.component';
@@ -10,7 +10,7 @@ import {DetailComponent} from '../detail/detail.component';
 })
 export class CourseComponent implements OnInit {
 
-  constructor(private courselistingser : CourseListingServiceService) {
+  constructor(private courselistingser : CourseListingServiceService, private cd: ChangeDetectorRef,) {
     this.arrayImg[0] = "assets/images/icon-img1.svg";
     this.arrayImg[1] = "assets/images/icon-img2.svg";
     this.arrayImg[2] = "assets/images/icon-img3.svg";
@@ -21,8 +21,10 @@ export class CourseComponent implements OnInit {
   courselist:any;
   showDetail = false;
   arrayImg = new Array();
-
   courseDetail:any;
+  ngAfterViewInit() {
+    this.cd.detectChanges();
+  }
   ngOnInit() {
     this.courselistingser.fetchCourseData().subscribe(
       (data) => {
