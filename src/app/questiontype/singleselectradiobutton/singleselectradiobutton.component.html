@@ -3,9 +3,9 @@
     <h3 [innerHTML]="question.question | safeHtml"></h3>
     <ul class="list-unstyled rad-list">
         <li class="list-inline-item" *ngFor="let n of question['choices'] let i = index">
-            <label for={{i}}>
+            <label [attr.for]="'s'+i" >
               <input type="radio" 
-              (change)="onOptionChanged(n.answer,i)"  id={{i}} name={{question.id}}  [checked]="isChecked == i" value="on" >
+              (change)="onOptionChanged(n.answer,i)"  [attr.id]="'s'+i"  name={{question.id}}  [checked]="isChecked == i" value="on" >
               <span class="fake-input"></span>
               <span class="fake-label">{{n.answer}}</span>
             </label>

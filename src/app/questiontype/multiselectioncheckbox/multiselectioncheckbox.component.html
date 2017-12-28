@@ -3,10 +3,10 @@
     <h3 [innerHTML]="question.question | safeHtml"></h3>
     <ul class="list-unstyled rad-list">
         <li *ngFor="let n of names let i = index">
-            <label for={{i}}>
+            <label [attr.for]="'m'+i">
               <input value="{{option}}"
               (ngModel)="n.selected" (change)="checkIfAllSelected(i);"
-                type="checkbox" id={{i}}  name="">
+                type="checkbox" [attr.id]="'m'+i"  name="">
               <span class="fake-input"></span>
               <span class="fake-label">{{n.answer}}</span>
             </label>

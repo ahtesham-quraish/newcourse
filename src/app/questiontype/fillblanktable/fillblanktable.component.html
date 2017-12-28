@@ -18,7 +18,7 @@
                 <div class="cell-holder row-width">
                   <div *ngFor="let col of row.columns let j = index" class="cell" style="width: 50%;">
                     <div class="input-holder input-active" *ngIf="col.type == 'ANSWER'">
-                      <input  (ngModelChange)="onChangeOption(i , j);" type="text" placeholder="Enter Answer" class="form-control">
+                      <input  (input)="onChangeOption(i , j, $event.target.value);" type="text" placeholder="Enter Answer" class="form-control">
                     </div>
                     <div class="input-holder" *ngIf="col.type == 'TEXT'">
                       <span class="answer-text">{{col.value}}</span>

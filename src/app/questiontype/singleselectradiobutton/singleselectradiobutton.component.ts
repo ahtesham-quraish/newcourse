@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {QuestionSubmitService} from '../../service/question-submit-service'
 
 @Component({
   selector: 'app-singleselectradiobutton',
@@ -7,32 +8,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SingleselectradiobuttonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private qservice: QuestionSubmitService) { }
   @Input() content: any;
   question : any 
+  @Input() index : any;
   ngOnInit() {
     this.question = this.content['detail'];
     console.log("question", this.question);
   }
 
   onOptionChanged(value:string, index:number){
-    
-    //jQuery('#TruefalsedropdownComponent').text(value)
     let choices = this.question['choices'];
-    console.log(this.question)
-    // if(choices[index]['isCorrect'] === true){
-    //   // this.isCorrect = 'correct'
-    //   // this.submitAnswerEvent.emit({"isCorrect" : 'correct'});
-    //   // this.selectAnswer(index ,this.current_slide ,1)
-    // }
-    // else{
-    //   // this.isCorrect = 'incorrect';
-    //   // this.submitAnswerEvent.emit({"isCorrect" : 'incorrect'});
-    //   // this.selectAnswer(index ,this.current_slide , 0)
-    // }
-  }
-  getID(id, i){
-    return id+i;
+    if(choices[index]['isCorrect'] == true){
+      this.qservice.changeMessage({"content" : this.content, "index":this.index , "correct": true});
+    }
+    else{
+      this.qservice.changeMessage({"content" : this.content, "index":this.index , "correct": false});
+    }
   }
 
 }

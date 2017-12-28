@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  Input, Pipe, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import {QuestionSubmitService} from '../../service/question-submit-service'
 
 @Component({
   selector: 'app-pdf',
@@ -8,7 +9,7 @@ import {  Input, Pipe, ViewChild, ElementRef, Output, EventEmitter } from '@angu
 })
 export class PdfComponent implements OnInit {
 
-  constructor() { }
+  constructor(private qservice: QuestionSubmitService) { }
   content:any;
   question : any 
   @Input() index: any;

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {QuestionSubmitService} from '../../service/question-submit-service'
 
 @Component({
   selector: 'app-document',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DocumentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private qservice : QuestionSubmitService) { }
   content= {};
   @Input() index: any;
   question : any 

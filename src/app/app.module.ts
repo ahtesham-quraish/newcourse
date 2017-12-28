@@ -29,7 +29,10 @@ import { SingleselectdropdownComponent } from './questiontype/singleselectdropdo
 import { SingleselectradiobuttonComponent } from './questiontype/singleselectradiobutton/singleselectradiobutton.component';
 import { TruefalsedropdownComponent } from './questiontype/truefalsedropdown/truefalsedropdown.component';
 import { TruefalseradionbuttonComponent } from './questiontype/truefalseradionbutton/truefalseradionbutton.component';
-import { SequenceComponent } from './questiontype/sequence/sequence.component'
+import { SequenceComponent } from './questiontype/sequence/sequence.component';
+import {QuestionSubmitService} from '../app/service/question-submit-service';
+import { SingldropdownComponent } from './questiontype/singldropdown/singldropdown.component';
+import { DragDropDirectiveModule} from "angular4-drag-drop";
 
 @NgModule({
   declarations: [
@@ -52,7 +55,8 @@ import { SequenceComponent } from './questiontype/sequence/sequence.component'
     SingleselectradiobuttonComponent,
     TruefalsedropdownComponent,
     TruefalseradionbuttonComponent,
-    SequenceComponent
+    SequenceComponent,
+    SingldropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -62,10 +66,11 @@ import { SequenceComponent } from './questiontype/sequence/sequence.component'
     VgCoreModule,
     VgControlsModule,
     VgBufferingModule,
-    VgOverlayPlayModule
+    VgOverlayPlayModule,
+    DragDropDirectiveModule
   ],
-  entryComponents: [AppComponent, AudioComponent, MultiselectioncheckboxComponent,FillblanktableComponent,SingleselectdropdownComponent, SingleselectradiobuttonComponent, TruefalseradionbuttonComponent,VideoComponent, PdfComponent,FillintheblankComponent, SlidesComponent, TextComponent, ImgComponent, DocumentComponent, TruefalsedropdownComponent],
-  providers: [CourseListingServiceService, WindowRef],
+  entryComponents: [AppComponent, AudioComponent, SequenceComponent, MultiselectioncheckboxComponent,FillblanktableComponent,SingleselectdropdownComponent, SingleselectradiobuttonComponent, TruefalseradionbuttonComponent,VideoComponent, PdfComponent,FillintheblankComponent, SlidesComponent, TextComponent, ImgComponent, DocumentComponent, TruefalsedropdownComponent],
+  providers: [CourseListingServiceService, QuestionSubmitService, WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

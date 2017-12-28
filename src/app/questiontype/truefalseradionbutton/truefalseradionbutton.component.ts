@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {QuestionSubmitService} from '../../service/question-submit-service'
 
 @Component({
   selector: 'app-truefalseradionbutton',
@@ -7,9 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TruefalseradionbuttonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private qservice : QuestionSubmitService) { }
   @Input() content: any;
-  question : any 
+  @Input() index:any;
+  question : any  
   ngOnInit() {
     this.question = this.content['detail'];
   }
@@ -18,23 +20,15 @@ export class TruefalseradionbuttonComponent implements OnInit {
     
     
     let choices = this.question['choices'];
-    console.log("value", value , index , 'true false radio button')
 
-    //var correct_index = choices.findIndex(x => x.isCorrect == true);
-    // if(choices[index]['isCorrect'] === true){
-    //   // this.isCorrect = 'correct'
-    //   // this.submitAnswerEvent.emit({"isCorrect" : 'correct'});
-    //   // this.selectAnswer(index ,this.current_slide ,1)
+    var correct_index = choices.findIndex(x => x.isCorrect == true);
+    if(choices[index]['isCorrect'] === true){
+       this.qservice.changeMessage({"content" : this.content, "index":this.index , "correct": true});
 
-    // }
-    // else{
-    //   // this.isCorrect = 'incorrect';
-    //   // this.submitAnswerEvent.emit({"isCorrect" : 'incorrect'});
-    //   // this.selectAnswer(index ,this.current_slide ,0)
-    // }
+    }
+    else{
+      this.qservice.changeMessage({"content" : this.content, "index":this.index, "correct": false});
+    }
 }
-  getID(id, i){
-    return id+i;
-  }
 
 }

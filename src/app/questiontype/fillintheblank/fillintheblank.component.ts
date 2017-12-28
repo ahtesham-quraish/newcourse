@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {QuestionSubmitService} from '../../service/question-submit-service'
 
 @Component({
   selector: 'app-fillintheblank',
@@ -7,27 +8,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FillintheblankComponent implements OnInit {
 
-  constructor() { }
+  constructor(private qservice : QuestionSubmitService) { }
   @Input() content: any;
-  mymodel = ""
+  mymodel = undefined
+  @Input() index:any
   question : any 
   ngOnInit() {
     this.question = this.content['detail'];
   }
-  public onOptionChanged(newValue){
+   onOptionChanged(newValue){
+    console.log("changeing", newValue)
     
     let choices = this.question['choices'];
-    // this.mymodel = newValue;
-    // if(choices[0]['answer'] === newValue){
-    //   this.isCorrect = 'correct'
-    //   this.submitAnswerEvent.emit({"isCorrect" : 'correct'});
-    //   this.selectAnswer(newValue ,this.current_slide , 1)
-    // }
-    // else{
-    //   this.isCorrect = 'incorrect';
-    //   this.submitAnswerEvent.emit({"isCorrect" : 'incorrect'});
-    //   this.selectAnswer(newValue ,this.current_slide , 0)
-    // }
+    //this.mymodel = newValue;
+    if(choices[0]['answer'] === newValue){
+      this.qservice.changeMessage({"content" : this.content, "index":this.index , "correct": true});
+    }
+    else{
+      this.qservice.changeMessage({"content" : this.content, "index":this.index , "correct": false});
+    }
   }
 
 }

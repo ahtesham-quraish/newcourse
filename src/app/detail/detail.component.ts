@@ -19,6 +19,9 @@ import { SingleselectradiobuttonComponent } from '../questiontype/singleselectra
 import { TruefalsedropdownComponent } from '../questiontype/truefalsedropdown/truefalsedropdown.component';
 import { TruefalseradionbuttonComponent } from '../questiontype/truefalseradionbutton/truefalseradionbutton.component';
 import { SequenceComponent } from '../questiontype/sequence/sequence.component'
+import {QuestionSubmitService} from '../service/question-submit-service';
+import { SingldropdownComponent } from '../questiontype/singldropdown/singldropdown.component';
+
 
 @Component({
   selector: 'app-detail',
@@ -31,27 +34,33 @@ export class DetailComponent implements OnInit {
    ref = '';
   @Input() courseDetail:any;
   @Output() messageEvent = new EventEmitter<string>();
-  ComponentArray = [{"type": "slides", "questiontype": "" ,"component": SlidesComponent} , {"type": "pdf", "questiontype": "" , "component": PdfComponent},
-  {"type": "img", "questiontype": "" ,"component": ImgComponent},{"type": "video", "questiontype": "" ,"component": VideoComponent},
-  {"type": "audio", "questiontype": "" ,"component": AudioComponent}, {"type": "document", "questiontype": "" ,"component": DocumentComponent},
-  {"type": "text", "questiontype": "" ,"component": TextComponent}, {"type": "Question","questiontype": "TRUE_FALSE_SELECT" , "component": TruefalsedropdownComponent},
+  ComponentArray = [{"type": "slides", "questiontype": "" ,"component": SlidesComponent} ,
+  {"type": "pdf", "questiontype": "" , "component": PdfComponent},
+  {"type": "img", "questiontype": "" ,"component": ImgComponent},
+  {"type": "video", "questiontype": "" ,"component": VideoComponent},
+  {"type": "audio", "questiontype": "" ,"component": AudioComponent}, 
+  {"type": "document", "questiontype": "" ,"component": DocumentComponent},
+  {"type": "text", "questiontype": "" ,"component": TextComponent}, 
+  {"type": "Question","questiontype": "TRUE_FALSE_SELECT" , "component": TruefalsedropdownComponent},
   {"type": "Question","questiontype": "FILL_BLANK" , "component": FillintheblankComponent},
   {"type": "Question","questiontype": "TRUE_FALSE_RADIO" , "component": TruefalseradionbuttonComponent},
   {"type": "Question","questiontype": "SINGLE_SELECT_RADIO" , "component": SingleselectradiobuttonComponent},
   {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": SingleselectdropdownComponent},
   {"type": "Question","questiontype": "FILL_BLANK_TABLE" , "component": FillblanktableComponent},
-  {"type": "Question","questiontype": "MULTI_SELECT" , "component": MultiselectioncheckboxComponent}];
+  {"type": "Question","questiontype": "MULTI_SELECT" , "component": MultiselectioncheckboxComponent},
+  {"type": "Question","questiontype": "SEQUENCE" , "component": SequenceComponent}];
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;
-  constructor(private wind: WindowRef, private componentFactoryResolver: ComponentFactoryResolver, private detailservice : CourseListingServiceService) { 
+  constructor(private wind: WindowRef,
+     private componentFactoryResolver: ComponentFactoryResolver, 
+     private detailservice : CourseListingServiceService,
+     private qservice : QuestionSubmitService) { 
     
 
   }
 
   ngOnInit() {
-   // console.log(jquery)
-    console.log(this.courseDetail , "detail")
     this.title = this.courseDetail.name;
     this.contentlist = this.courseDetail.content;
     let questionExist = false;
@@ -68,7 +77,6 @@ export class DetailComponent implements OnInit {
           let urlSplit = this.contentlist[i].url.split('qbank/');
           this.detailservice.fetchQuestionData(urlSplit[1]).subscribe(
           function (data) {
-              console.log("data question", urlSplit[1], data, i)
               this.courseDetail.content[i]['detail'] = data; 
               questionLength.pop();
               if(questionLength.length == 0){
@@ -78,25 +86,26 @@ export class DetailComponent implements OnInit {
             }.bind(this));
         }
       }
-      console.log("if");
     }
     else{
       this.initCourseContent();
-      console.log("else")
-
     }
 
- 
+    this.qservice.currentMessage.subscribe(function(message)  {
+      if(Object.keys(message).length){ 
+        console.log("ahtesham",message);
+      }
+    }.bind(this));
+  
 
   }
   initCourseContent(){
     for(let i = 0; i < this.courseDetail.content.length; i++ ){
       for(let j = 0; j < this.ComponentArray.length; j++){
-        console.log(this.courseDetail.content[i].type, this.courseDetail.content[i].type )
         if(this.ComponentArray[j].type == this.courseDetail.content[i].type && this.courseDetail.content[i].type != 'Question'){
           let com = this.componentFactoryResolver.resolveComponentFactory(this.ComponentArray[j].component);
           this.createdComponent.push({"com": com, "content" : this.courseDetail.content[i]});
-          console.log(this.courseDetail.content[i].type)
+        
         }
         
         else if(this.ComponentArray[j].type == this.courseDetail.content[i].type &&
@@ -104,19 +113,17 @@ export class DetailComponent implements OnInit {
             if(this.ComponentArray[j]['questiontype'] == this.courseDetail.content[i]['detail'].questionMetaData.type ){
             let com = this.componentFactoryResolver.resolveComponentFactory(this.ComponentArray[j].component);
             this.createdComponent.push({"com": com, "content" : this.courseDetail.content[i]});
-            console.log(this.courseDetail.content[i].type)
+  
             }
         }
       }
     }
-    console.log(this.courseDetail.content)
     
     setTimeout(function(){
       // at this point we want the "another-child" component to be rendered into the app.component:
       
       for(let  i = 0 ; i < this.createdComponent.length ; i++){
          this.ref = this.parent.createComponent(this.createdComponent[i].com);
-        console.log(this.createdComponent[i].com)
         this.ref.instance.content = this.createdComponent[i].content;
         this.ref.instance.index = i;
       }

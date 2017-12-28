@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {QuestionSubmitService} from '../../service/question-submit-service'
 declare var jquery:any;
 declare var $ :any;
 
@@ -9,7 +10,7 @@ declare var $ :any;
 })
 export class SlidesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private qservice : QuestionSubmitService) { }
   content= {};
   @Input() index: any;
   question : any 
