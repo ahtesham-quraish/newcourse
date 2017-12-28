@@ -33,6 +33,8 @@ import { SequenceComponent } from './questiontype/sequence/sequence.component';
 import {QuestionSubmitService} from '../app/service/question-submit-service';
 import { SingldropdownComponent } from './questiontype/singldropdown/singldropdown.component';
 import { DragDropDirectiveModule} from "angular4-drag-drop";
+import { DropdownComponent } from './questiontype/dropdown/dropdown.component';
+import { AbcComponent } from './questiontype/abc/abc.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { DragDropDirectiveModule} from "angular4-drag-drop";
     TruefalsedropdownComponent,
     TruefalseradionbuttonComponent,
     SequenceComponent,
-    SingldropdownComponent
+    SingldropdownComponent,
+    DropdownComponent,
+    AbcComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,7 @@ import { DragDropDirectiveModule} from "angular4-drag-drop";
     VgOverlayPlayModule,
     DragDropDirectiveModule
   ],
-  entryComponents: [AppComponent, AudioComponent, SequenceComponent, MultiselectioncheckboxComponent,FillblanktableComponent,SingleselectdropdownComponent, SingleselectradiobuttonComponent, TruefalseradionbuttonComponent,VideoComponent, PdfComponent,FillintheblankComponent, SlidesComponent, TextComponent, ImgComponent, DocumentComponent, TruefalsedropdownComponent],
+  entryComponents: [AppComponent, AudioComponent, AbcComponent, DropdownComponent, SequenceComponent, MultiselectioncheckboxComponent,FillblanktableComponent,SingleselectdropdownComponent, SingleselectradiobuttonComponent, TruefalseradionbuttonComponent,VideoComponent, PdfComponent,FillintheblankComponent, SlidesComponent, TextComponent, ImgComponent, DocumentComponent, TruefalsedropdownComponent],
   providers: [CourseListingServiceService, QuestionSubmitService, WindowRef],
   bootstrap: [AppComponent]
 })

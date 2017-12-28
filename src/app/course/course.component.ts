@@ -10,9 +10,19 @@ import {DetailComponent} from '../detail/detail.component';
 })
 export class CourseComponent implements OnInit {
 
-  constructor(private courselistingser : CourseListingServiceService) { }
+  constructor(private courselistingser : CourseListingServiceService) {
+    this.arrayImg[0] = "100x100";
+    this.arrayImg[1] = "150x150";
+    this.arrayImg[2] = "200x200";
+    this.arrayImg[3] = "250x250";
+    this.arrayImg[4] = "300x300";
+    this.arrayImg[5] = "350x350";
+    this.arrayImg[6] = "400x400";
+   }
   courselist:any;
   showDetail = false;
+  arrayImg = new Array();
+
   courseDetail:any;
   ngOnInit() {
     this.courselistingser.fetchCourseData().subscribe(

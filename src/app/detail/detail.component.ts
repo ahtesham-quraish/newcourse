@@ -21,6 +21,8 @@ import { TruefalseradionbuttonComponent } from '../questiontype/truefalseradionb
 import { SequenceComponent } from '../questiontype/sequence/sequence.component'
 import {QuestionSubmitService} from '../service/question-submit-service';
 import { SingldropdownComponent } from '../questiontype/singldropdown/singldropdown.component';
+import { DropdownComponent } from '../questiontype/dropdown/dropdown.component';
+import { AbcComponent } from '../questiontype/abc/abc.component';
 
 
 @Component({
@@ -45,10 +47,10 @@ export class DetailComponent implements OnInit {
   {"type": "Question","questiontype": "FILL_BLANK" , "component": FillintheblankComponent},
   {"type": "Question","questiontype": "TRUE_FALSE_RADIO" , "component": TruefalseradionbuttonComponent},
   {"type": "Question","questiontype": "SINGLE_SELECT_RADIO" , "component": SingleselectradiobuttonComponent},
-  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": SingleselectdropdownComponent},
   {"type": "Question","questiontype": "FILL_BLANK_TABLE" , "component": FillblanktableComponent},
   {"type": "Question","questiontype": "MULTI_SELECT" , "component": MultiselectioncheckboxComponent},
-  {"type": "Question","questiontype": "SEQUENCE" , "component": SequenceComponent}];
+  {"type": "Question","questiontype": "SEQUENCE" , "component": SequenceComponent},
+  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": DropdownComponent}];
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;
