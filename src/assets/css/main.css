@@ -44,7 +44,7 @@ body {
 b,
 strong,
 table th {
-  font-family: "MuseoSans-700", sans-serif;
+  font-family: "MuseoSans-500", sans-serif;
   font-weight: normal;
 }
 
@@ -92,14 +92,14 @@ button:hover {
 @media (max-width: 575px) {
   #main h1,
   #main h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 575px) {
   #main h3,
   #main h4 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -136,6 +136,7 @@ button:hover {
   .page-header.fixed-position {
     position: fixed !important;
     top: 0 !important;
+    left: 0 !important;
     margin-top: 0;
   }
 }
@@ -222,12 +223,6 @@ button:hover {
   margin: 2px 0;
 }
 
-@media (min-width: 576px) {
-  .page-header .header-text h1 {
-    font-size: 1.8rem;
-  }
-}
-
 .page-header .header-text .description {
   display: block;
 }
@@ -249,7 +244,7 @@ button:hover {
   display: block;
   padding: 0 0 5px;
   color: white;
-  font-family: "MuseoSans-700", sans-serif;
+  font-family: "MuseoSans-500", sans-serif;
 }
 
 .page-header .footer time span {
@@ -393,7 +388,7 @@ audio {
   margin: 0 0 5px;
   text-align: right;
   color: rgba(111, 111, 111, 0.75);
-  font-family: "MuseoSans-700", sans-serif;
+  font-family: "MuseoSans-500", sans-serif;
 }
 
 .card .article-detail {
@@ -642,7 +637,6 @@ audio {
   #sidebar {
     float: right;
     width: 200px;
-    text-transform: capitalize;
   }
   #sidebar h6 {
     margin: 0 5px 10px;
@@ -785,7 +779,7 @@ audio {
   float: left;
   width: 26px;
   text-align: center;
-  font-family: "MuseoSans-700", sans-serif;
+  font-family: "MuseoSans-500", sans-serif;
   margin: 0 10px 0 0;
   counter-increment: newCounter;
   content: "Q" counters(newCounter, ".") ".";
@@ -840,7 +834,7 @@ audio {
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background: white;
-  font-family: "MuseoSans-700", sans-serif;
+  font-family: "MuseoSans-500", sans-serif;
   margin: -2px 10px 0 0;
   content: counter(labelCounter, upper-latin);
   counter-increment: labelCounter;

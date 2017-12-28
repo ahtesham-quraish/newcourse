@@ -3,9 +3,9 @@
 	position: relative;
 	
 	h1,
-	h2{@include media('<small-tablet') {font-size: 1.5rem;}}
+	h2{@include media('<small-tablet') {font-size: 1.3rem;}}
 	h3,
-	h4{@include media('<small-tablet') {font-size: 1.25rem;}}
+	h4{@include media('<small-tablet') {font-size: 1.1rem;}}
 	h5{@include media('<small-tablet') {font-size: 1rem;}}
 }
 
@@ -29,6 +29,7 @@
 		@include media('≥tablet') {
 			position: fixed !important;
 			top: 0 !important;
+			left: 0 !important;
 			margin-top: 0;
 		}
 		
@@ -93,7 +94,6 @@
 		h1{
 			@extend %ellipsis;
 			margin: 2px 0;
-			@include media('≥small-tablet') {font-size: 1.8rem;}
 		}
 		
 		.description{
