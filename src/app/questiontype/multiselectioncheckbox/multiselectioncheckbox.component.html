@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-12 custom-form">
-    <h3 [innerHTML]="question.question | safeHtml"></h3>
+    <h3 [innerHTML]="content.name | safeHtml"></h3>
     <ul class="list-unstyled rad-list">
         <li *ngFor="let n of names let i = index">
             <label [attr.for]="'m'+i">

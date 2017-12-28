@@ -9,7 +9,7 @@
             </a>
           </div>
         </div>
-        <div class="img-holder"><img src="assets/images/icon-img.png" alt="course Image" class="img-fluid"></div>
+        <div class="img-holder"><img [attr.src]="image | safeUrl" alt="course Image" class="img-fluid"></div>
         <div class="header-text">
           <div class="holder">
             <span class="sub-head">Module</span>

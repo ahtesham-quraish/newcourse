@@ -11,13 +11,12 @@ import {DetailComponent} from '../detail/detail.component';
 export class CourseComponent implements OnInit {
 
   constructor(private courselistingser : CourseListingServiceService) {
-    this.arrayImg[0] = "100x100";
-    this.arrayImg[1] = "150x150";
-    this.arrayImg[2] = "200x200";
-    this.arrayImg[3] = "250x250";
-    this.arrayImg[4] = "300x300";
-    this.arrayImg[5] = "350x350";
-    this.arrayImg[6] = "400x400";
+    this.arrayImg[0] = "assets/images/icon-img1.svg";
+    this.arrayImg[1] = "assets/images/icon-img2.svg";
+    this.arrayImg[2] = "assets/images/icon-img3.svg";
+    this.arrayImg[3] = "assets/images/icon-img4.svg";
+    this.arrayImg[4] = "assets/images/icon-img5.svg";
+    this.arrayImg[5] = "assets/images/icon-img6.svg";
    }
   courselist:any;
   showDetail = false;
@@ -40,6 +39,14 @@ export class CourseComponent implements OnInit {
     console.log("back")
     this.showDetail = false;
   }
+
+  getRandomImage(i) {
+
+    var num = Math.floor( Math.random() * this.arrayImg.length );
+    var img = this.arrayImg[ num ];
+    this.courselist[i]['img'] = img;
+    return img
+}
 
 
 }

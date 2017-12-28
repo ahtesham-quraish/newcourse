@@ -35,6 +35,7 @@ export class DetailComponent implements OnInit {
   contentlist:any;
    ref = '';
   @Input() courseDetail:any;
+  @Input() image:any;
   @Output() messageEvent = new EventEmitter<string>();
   ComponentArray = [{"type": "slides", "questiontype": "" ,"component": SlidesComponent} ,
   {"type": "pdf", "questiontype": "" , "component": PdfComponent},
@@ -50,7 +51,8 @@ export class DetailComponent implements OnInit {
   {"type": "Question","questiontype": "FILL_BLANK_TABLE" , "component": FillblanktableComponent},
   {"type": "Question","questiontype": "MULTI_SELECT" , "component": MultiselectioncheckboxComponent},
   {"type": "Question","questiontype": "SEQUENCE" , "component": SequenceComponent},
-  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": DropdownComponent}];
+  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": DropdownComponent},
+  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWNs" , "component": DropdownComponent}];
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;
@@ -65,6 +67,8 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
     this.title = this.courseDetail.name;
     this.contentlist = this.courseDetail.content;
+    this.image = this.courseDetail.img
+    console.log(this.courseDetail)
     let questionExist = false;
     let questionLength = [];
     for(let i = 0 ; i < this.contentlist.length; i++){

@@ -58,4 +58,14 @@ export class SequenceComponent implements OnInit {
 
   }
 
+  dragoverMouse($event){
+    
+  }
+  startDrag(choice){
+    //console.log("draeged" , choice)
+  }
+  releaseDrop($event, i){
+    //console.log("droped",$event , i);
+  }    
+
 }
