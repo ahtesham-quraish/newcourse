@@ -128,6 +128,7 @@ button:hover {
 }
 
 .page-header.fixed-position {
+  left: 0;
   right: 0;
 }
 

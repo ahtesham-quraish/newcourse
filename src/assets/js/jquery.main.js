@@ -22,7 +22,7 @@ function initFixedSidebar(){
 
 		var headerHeight = $pageHeader.outerHeight();
 		
-		if(body.scrollTop() > $header.outerHeight()){
+		if((body.scrollTop() > $header.outerHeight())){
 			$pageContainer.css({
 				paddingTop : headerHeight + 'px'
 			});
