@@ -81,13 +81,13 @@
         <div id="content">
           <div  #parent></div>
           <div class="btn-holder clearfix">
-              <div class="alert alert-success" role="alert">
-                  <i class="fa fa-thumbs-up" aria-hidden="true"></i> You successfully Completed the Question.
+              <div *ngIf="showResultcard !=-1 && showResultcard > 40" class="alert alert-success" role="alert">
+                  <i class="fa fa-thumbs-up" aria-hidden="true"></i> You successfully Completed the Question.Score {{showResultcard}}% 
               </div>
-              <div class="alert alert-danger" role="alert">
-                <i class="fa fa-thumbs-down" aria-hidden="true"></i> Please Try again.
+              <div *ngIf="showResultcard !=-1 && showResultcard < 40" class="alert alert-danger" role="alert">
+                <i class="fa fa-thumbs-down" aria-hidden="true"></i> Please Try again.Score {{showResultcard}}%
               </div>
-              <a href="javascript:void(0)" class="btn btn-lg btn-success">Submit</a>
+              <a *ngIf="!hideBtton" (click)="showResult()" href="javascript:void(0)" class="btn btn-lg btn-success">Submit</a>
           </div>
         </div>
       

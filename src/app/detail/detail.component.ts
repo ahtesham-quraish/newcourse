@@ -34,8 +34,11 @@ export class DetailComponent implements OnInit {
   title:any;
   contentlist:any;
    ref = '';
+  hideBtton = false; 
   @Input() courseDetail:any;
   @Input() image:any;
+  anwser = [];
+  showResultcard = -1;
   @Output() messageEvent = new EventEmitter<string>();
   ComponentArray = [{"type": "slides", "questiontype": "" ,"component": SlidesComponent} ,
   {"type": "pdf", "questiontype": "" , "component": PdfComponent},
@@ -103,10 +106,30 @@ export class DetailComponent implements OnInit {
     this.qservice.currentMessage.subscribe(function(message)  {
       if(Object.keys(message).length){ 
         console.log("ahtesham",message);
+
+       var item = this.anwser.find(x => x.index == message.index );
+       
+       
+       if(item != undefined){
+        var i = this.anwser.findIndex(x => x.index == message.index );
+        this.anwser[i] = message;
+       }
+       else{
+        this.anwser.push(message);
+       }        
       }
     }.bind(this));
   
 
+  }
+  showResult(){
+    let isCorrect = this.anwser.filter(x => x.correct == true);
+    let question = this.courseDetail.content.filter(x => x.type == 'Question');
+    let res = (isCorrect.length / question.length) * 100;
+    this.showResultcard = res;
+    this.hideBtton = true;
+
+    console.log("is ", isCorrect, question , res);
   }
   initCourseContent(){
     for(let i = 0; i < this.courseDetail.content.length; i++ ){
