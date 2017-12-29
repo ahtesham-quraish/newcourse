@@ -52,7 +52,7 @@ export class DetailComponent implements OnInit {
   {"type": "Question","questiontype": "MULTI_SELECT" , "component": MultiselectioncheckboxComponent},
   {"type": "Question","questiontype": "SEQUENCE" , "component": SequenceComponent},
   {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWNs" , "component": AbcComponent},
-  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": SingleselectdropdownComponent}];
+  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": DropdownComponent}];
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;

@@ -8,7 +8,7 @@ import {QuestionSubmitService} from '../../service/question-submit-service'
 })
 export class AbcComponent implements OnInit {
 
-  constructor(private qservice : QuestionSubmitService) { }
+  constructor() { }
   @Input() content: any;
   @Input() index:any;
   question : any 

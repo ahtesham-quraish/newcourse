@@ -9,13 +9,27 @@ import {QuestionSubmitService} from '../../service/question-submit-service';
 })
 export class DropdownComponent implements OnInit {
 
-  constructor( qservice:QuestionSubmitService) { }
+  constructor( private qservice:QuestionSubmitService) { }
   @Input() content: any;
-  question : any;
-  @Input() index:any 
+  question : any 
+  index :any
   ngOnInit() {
+    this.question = this.content['detail'];
   }
-  
+   onOptionChanged(value:string, index:number){
+    
+    console.log(value, index);
+    jQuery('#SingleselectdropdownComponent').text(value)
+    let choices = this.question['choices'];
+    if(choices[index]['isCorrect'] === true){
+      this.qservice.changeMessage({"content" : this.content, "index":this.index , "correct": true});
+     
+    }
+    else{
+      this.qservice.changeMessage({"content" : this.content, "index":this.index , "correct": false});
+    }
+  }
+
 
 }
 
