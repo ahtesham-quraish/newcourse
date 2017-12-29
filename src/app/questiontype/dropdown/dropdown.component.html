@@ -1,5 +1,25 @@
 <div attr.id="{{'tab'+index}}" class="section" > 
-<p>
-  dropdown works!
-</p>
+    <div class="row">
+        <div class="col-sm-12">
+          <h3 [innerHTML]="content.name | safeHtml"></h3>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="select-block">
+                <div class="dropdown" ngbDropdown>
+                  <button class="btn btn-dropmenu dropdown-toggle" id="dropdownMenuButton1" type="button" ngbDropdownToggle> 
+                    <span id="SingleselectdropdownComponent" class="btn-text">Select</span> <span class="drop-icon"><span class="fa fa-angle-down"></span></span>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1" ngbDropdownMenu >
+                    <ul class="drop-list">
+                        <li *ngFor="let n of question['choices'] let i = index">
+                            <a href="javascript:void(0)" (click)="onOptionChanged(n.answer,i)" class="nav-link">{{n.answer}}</a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
 </div>

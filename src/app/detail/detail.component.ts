@@ -51,8 +51,8 @@ export class DetailComponent implements OnInit {
   {"type": "Question","questiontype": "FILL_BLANK_TABLE" , "component": FillblanktableComponent},
   {"type": "Question","questiontype": "MULTI_SELECT" , "component": MultiselectioncheckboxComponent},
   {"type": "Question","questiontype": "SEQUENCE" , "component": SequenceComponent},
-  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": DropdownComponent},
-  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWNs" , "component": DropdownComponent}];
+  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWNs" , "component": AbcComponent},
+  {"type": "Question","questiontype": "SINGLE_SELECT_DROPDOWN" , "component": SingleselectdropdownComponent}];
   createdComponent = [];
   @ViewChild('parent', {read: ViewContainerRef})
   parent: ViewContainerRef;

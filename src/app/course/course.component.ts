@@ -23,14 +23,18 @@ export class CourseComponent implements OnInit {
   arrayImg = new Array();
   courseDetail:any;
   ngAfterViewInit() {
-    this.cd.detectChanges();
+   
+   
   }
   ngOnInit() {
     this.courselistingser.fetchCourseData().subscribe(
-      (data) => {
+      function(data) {
         this.courselist = data;
-      }
+        this.cd.markForCheck();
+      }.bind(this)
+      
     )
+    //
   }
 
   DetailCourse(event, index){
@@ -41,6 +45,9 @@ export class CourseComponent implements OnInit {
     console.log("back")
     this.showDetail = false;
   }
+  // refresh() {
+  //   this.cd.detectChanges();
+  // }
 
   getRandomImage(i) {
 

@@ -9,7 +9,7 @@ import {QuestionSubmitService} from '../../service/question-submit-service';
 })
 export class DropdownComponent implements OnInit {
 
-  constructor( ) { }
+  constructor( qservice:QuestionSubmitService) { }
   @Input() content: any;
   question : any;
   @Input() index:any 
