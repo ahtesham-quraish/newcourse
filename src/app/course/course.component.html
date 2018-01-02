@@ -56,16 +56,24 @@
                       </a>
                     </li>
                   </ul>
-                  <ul *ngIf="course.metaData.tags != null" class="tags-list list-inline">
-                    <li *ngFor="let tag of course.metaData.tags; let j = index" class="list-inline-item">
-                      <a href="javascript:void(0)" class="btn btn-light">{{tag}}</a>
-                    </li>
-                    <li *ngIf="course.metaData.tags.length > 2" class="list-inline-item tooltip-holder">
-                      <a href="javascript:void(0)" class="btn btn-light">
-                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                      </a>
-                    </li>
-                  </ul>
+                  <div class="tags-holder" *ngIf="course.metaData.tags != null" (mouseleave) ="mouseLeave($event)">
+                    <ul class="tags-list list-inline">
+                        <li *ngFor="let tag of course.metaData.tags; let j = index" class="list-inline-item">
+                          <a href="javascript:void(0)" *ngIf="j < 2" class="btn btn-light">{{tag}}</a>
+                        </li>
+                        <li attr.id="{{course.id + 'p'}}" (mouseenter) ="mouseEnter($event)" *ngIf="course.metaData.tags.length > 2" class="list-inline-item tooltip-holder">
+                          <a href="javascript:void(0)" class="btn btn-light">
+                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                          </a>
+                        </li>
+                      </ul>
+                     <div class="dropdown-menu tags">
+                          <span class="arrow"></span>
+                          <ul attr.id="{{course.id + 'drop'}}" class="drop-list">
+                            <li *ngFor="let tag of course.metaData.tags; let j = index"><a href="#" *ngIf="j >= 2">{{tag}}</a></li>
+                          </ul>
+                      </div>
+                  </div>
                 </footer>
               </div>
             </article>

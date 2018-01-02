@@ -5,13 +5,15 @@
   clear: both;
 }
 
-.dropdown .drop-list, .questions-list, .questions-list > li > ol, .count-list, .table.sequence-table tr td * {
+.dropdown .drop-list,
+.tags-holder .drop-list, .questions-list, .questions-list > li > ol, .count-list, .table.sequence-table tr td * {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.dropdown .drop-list, .questions-list, .questions-list > li > ol, .count-list, .table.sequence-table tr td * {
+.dropdown .drop-list,
+.tags-holder .drop-list, .questions-list, .questions-list > li > ol, .count-list, .table.sequence-table tr td * {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -414,27 +416,31 @@ audio {
   float: left;
 }
 
-.card .footer .tags-list {
+.card .footer .tags-holder {
   float: right;
   width: calc(100% - 80px);
 }
 
-.dropdown .dropdown-backdrop {
+.dropdown .dropdown-backdrop,
+.tags-holder .dropdown-backdrop {
   display: none;
 }
 
-.dropdown .dropdown-toggle {
+.dropdown .dropdown-toggle,
+.tags-holder .dropdown-toggle {
   padding-right: 20px;
   padding-left: 5px;
   cursor: pointer;
   background: #f3f3f5;
 }
 
-.dropdown .dropdown-toggle:after {
+.dropdown .dropdown-toggle:after,
+.tags-holder .dropdown-toggle:after {
   display: none;
 }
 
-.dropdown .dropdown-toggle:before {
+.dropdown .dropdown-toggle:before,
+.tags-holder .dropdown-toggle:before {
   content: "\f107";
   font: 16px/1 FontAwesome;
   text-decoration: inherit;
@@ -446,25 +452,30 @@ audio {
   cursor: pointer;
 }
 
-.dropdown .dropdown-toggle:hover {
+.dropdown .dropdown-toggle:hover,
+.tags-holder .dropdown-toggle:hover {
   color: #4e8db6;
 }
 
-.dropdown.show .dropdown-toggle {
+.dropdown.show .dropdown-toggle,
+.tags-holder.show .dropdown-toggle {
   color: #4e8db6;
 }
 
-.dropdown.show .dropdown-toggle:before {
+.dropdown.show .dropdown-toggle:before,
+.tags-holder.show .dropdown-toggle:before {
   cursor: pointer;
   content: "\f106";
 }
 
-.dropdown.show .dropdown-toggle .drop-icon .fa:before {
+.dropdown.show .dropdown-toggle .drop-icon .fa:before,
+.tags-holder.show .dropdown-toggle .drop-icon .fa:before {
   cursor: pointer;
   content: "\f106";
 }
 
-.dropdown.show .dropdown-menu {
+.dropdown.show .dropdown-menu,
+.tags-holder.show .dropdown-menu {
   visibility: visible;
   opacity: 1;
   -moz-transition: transform 0.15s cubic-bezier(0.3, 0, 0, 1.5);
@@ -478,7 +489,8 @@ audio {
   transform: scale(1);
 }
 
-.dropdown .drop-list li a {
+.dropdown .drop-list li a,
+.tags-holder .drop-list li a {
   display: block;
   padding: 8px;
   border-left: 2px solid transparent;
@@ -487,16 +499,24 @@ audio {
 }
 
 .dropdown .drop-list li a:hover,
-.dropdown .drop-list li a:active {
+.dropdown .drop-list li a:active,
+.tags-holder .drop-list li a:hover,
+.tags-holder .drop-list li a:active {
   background: #dde1e9;
   color: #333e48;
   border-color: #4c9688;
 }
 
-.dropdown .drop-list li.active a {
+.dropdown .drop-list li.active a,
+.tags-holder .drop-list li.active a {
   background: #dde1e9;
   color: #333e48;
   border-color: #4c9688;
+}
+
+.card .header .dropdown .dropdown-menu {
+  left: auto !important;
+  right: 0 !important;
 }
 
 .dropdown-menu {
@@ -529,9 +549,65 @@ audio {
   transform: scale(0.8);
 }
 
+.dropdown-menu.tags {
+  top: calc(100% - 20px);
+  min-width: inherit;
+  width: 120px;
+  right: -32px;
+  box-shadow: none;
+  background: none;
+}
+
+.dropdown-menu.tags .drop-list {
+  background: #333e48;
+}
+
+.dropdown-menu.tags .drop-list li a {
+  display: block;
+  padding: 8px;
+  border-left-width: 0;
+  white-space: normal;
+  color: white;
+}
+
+.dropdown-menu.tags .drop-list li a:hover,
+.dropdown-menu.tags .drop-list li a:active {
+  background: #333e48;
+  text-decoration: underline;
+  color: white;
+}
+
+.dropdown-menu.tags .drop-list li.active a {
+  background: #333e48;
+  color: white;
+}
+
 .select-block .dropdown-menu {
   right: 30px;
   left: 0;
+}
+
+.arrow {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.arrow:after {
+  top: -10px;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(51, 62, 72, 0);
+  border-bottom-color: #333e48;
+  border-width: 10px;
+  margin-left: -10px;
 }
 
 .icons-list {
@@ -599,7 +675,6 @@ audio {
 .tags-list li {
   vertical-align: top;
   letter-spacing: 0;
-  padding: 0 3px;
 }
 
 .tags-list li.list-inline-item:not(:last-child) {
@@ -608,6 +683,7 @@ audio {
 
 .tags-list li .btn {
   padding: 5px;
+  margin: 0 3px;
   min-width: 30px;
   text-align: center;
   background: #f3f3f5;

@@ -1,4 +1,5 @@
-.dropdown{
+.dropdown,
+.tags-holder{
 	.dropdown-backdrop{display: none;}
 
 	.dropdown-toggle{
@@ -81,6 +82,17 @@
 	}
 }
 
+.card{
+	.header{
+		.dropdown{
+			.dropdown-menu{
+				left: auto !important;
+				right: 0 !important;
+			}
+		}
+	}
+}
+
 .dropdown-menu{
 	display: block;
 	left: auto;
@@ -99,11 +111,72 @@
 	@include border-radius(0);
 	@include transition(transform .15s cubic-bezier(.3,0,0,1.5));
 	@include scale(0.8);
+	
+	&.tags{
+		top: calc(100% - 20px);
+		min-width: inherit;
+		width: 120px;
+		right: -32px;
+		box-shadow: none;
+		background: none;
+		
+		.drop-list{
+			background: $very-dark-grayish-blue;
+			
+			li{
+				a{
+					display: block;
+					padding: 8px;
+					border-left-width: 0;
+					white-space: normal;
+					color: white;
+
+					&:hover,
+					&:active{
+						background: $very-dark-grayish-blue;
+						text-decoration: underline;
+						color: white;
+					}
+				}
+
+				&.active{
+					a{
+						background: $very-dark-grayish-blue;
+						color: white;
+					}
+				}
+			}
+		}
+		
+	}
 }
 
 .select-block{
 	.dropdown-menu{
 		right: 30px;
 		left: 0;
+	}
+}
+
+.arrow {
+	position: relative;
+	width: 10px;
+	height: 10px;
+	display: block;
+	margin: 0 auto;
+	
+	&:after {
+		top: -10px;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba($very-dark-grayish-blue, 0);
+		border-bottom-color: $very-dark-grayish-blue;
+		border-width: 10px;
+		margin-left: -10px;
 	}
 }

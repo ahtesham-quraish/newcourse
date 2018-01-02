@@ -8,7 +8,6 @@
 	li{
 		vertical-align: top;
 		letter-spacing: 0;
-		padding: 0 3px;
 		
 		&.list-inline-item{
 			&:not(:last-child){margin: 0;}
@@ -16,6 +15,7 @@
 		
 		.btn{
 			padding: 5px;
+			margin: 0 3px;
 			min-width: 30px;
 			text-align: center;
 			background: $gray-lightest2;

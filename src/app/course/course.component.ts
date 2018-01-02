@@ -1,3 +1,7 @@
+declare var jquery:any;
+declare var $ :any;
+import * as jQuery from 'jquery';
+
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 import {CourseListingServiceService} from '../service/course-listing-service.service';
@@ -22,15 +26,26 @@ export class CourseComponent implements OnInit {
   showDetail = false;
   arrayImg = new Array();
   courseDetail:any;
+
+  mouseEnter(e){
+    $(e.target).parent().parent().addClass('show');
+ }
+ mouseLeave(e){
+   if($(e.target).hasClass('show')){
+    $(e.target).removeClass('show');
+   }
+  }
   ngAfterViewInit() {
    
    
   }
   ngOnInit() {
+
     this.courselistingser.fetchCourseData().subscribe(
       function(data) {
         this.courselist = data;
         this.cd.markForCheck();
+
       }.bind(this)
       
     )
