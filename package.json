@@ -4,6 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
+    "prestart": "NODE_ENV='dev' node ./src/environments/prebuild.js",
+    "prebuild": "NODE_ENV='production' node ./src/environments/prebuild.js",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
