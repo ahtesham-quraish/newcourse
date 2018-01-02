@@ -1,8 +1,8 @@
 export const environment = {
     production: false,
     system: 'prod', 
-    dependancyUrl: 'https://cinch-exam-js-framework-dev.herokuapp.com',
-    apiUrl: 'https://cinch-gateway-develop.herokuapp.com',
+    dependancyUrl: 'undefined',
+    apiUrl: 'undefined',
     rt:'{rt}'
     
   };

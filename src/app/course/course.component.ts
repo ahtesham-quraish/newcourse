@@ -44,7 +44,11 @@ export class CourseComponent implements OnInit {
     this.courselistingser.fetchCourseData().subscribe(
       function(data) {
         this.courselist = data;
-        this.cd.markForCheck();
+        console.log(this.courselist)
+        for(let i = 0; i< this.courselist.length ; i++){
+          this.courselist[i]['img'] = this.getRandomImage(i)
+        }
+        //this.cd.markForCheck();
 
       }.bind(this)
       
