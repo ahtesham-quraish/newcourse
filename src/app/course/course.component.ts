@@ -42,7 +42,7 @@ export class CourseComponent implements OnInit {
    
   }
   ngOnInit() {
-
+    this.router.navigate(['']);
     this.courselistingser.fetchCourseData().subscribe(
       function(data) {
         this.courselist = data;

@@ -3,6 +3,7 @@ export const environment = {
     system: 'prod', 
     dependancyUrl: 'undefined',
     apiUrl: 'undefined',
+    domain: 'undefined',
     rt:'{rt}'
     
   };

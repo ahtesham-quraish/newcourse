@@ -1,6 +1,7 @@
 export const environment = {
     production: true, 
     dependancyUrl: '{dependancyUrl}',
-    apiUrl: '{apiUrl}'
+    apiUrl: '{apiUrl}',
+    domain: '{domain}'
   };
   

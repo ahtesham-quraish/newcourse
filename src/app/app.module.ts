@@ -45,6 +45,10 @@ export const ROUTES: Routes = [
         { path: 'courseId/:id', component: DetailComponent },
       ],
     },
+    {
+      path: '**',
+      component: CourseComponent
+    }
       
 ]; 
 

@@ -22,6 +22,7 @@ if (err) return cb(err);
 console.log('>>>>>>>',contents) 
 var result = contents.replace(/{dependancyUrl}/g, env.exam_dependency_url)
     result = result.replace(/{apiUrl}/g, env.api_url)
+    result = result.replace(/{domain}/g, env.domain)
 console.log(result)
 fs.writeFile(__dirname+'/environment.ts', result, function(err) {
     if(err) {
