@@ -3,8 +3,148 @@ jQuery(function(){
 	// initFixedScrollBlock();
 	initAnchors();
 	initFixedSidebar();
+	// initFlexSlider();
+	// initIndexJs();
 });
 
+function initFlexSlider(){
+	$(document).ready(function () {
+
+		// Append .background-image-holder <img>'s as CSS backgrounds
+
+		$('.background-image-holder').each(function () {
+			var imgSrc = $(this)
+				.children('img')
+				.attr('src');
+			$(this).css('background', 'url("' + imgSrc + '")');
+			$(this)
+					.children('img')
+					.hide();
+			$(this).css('background-position', 'initial');
+		});
+
+		// Fade in background images
+
+		setTimeout(function () {
+			$('.background-image-holder').each(function () {$(this).addClass('fadeIn');});
+		}, 0);
+
+		// Image Sliders
+
+		$('.slider-all-controls').flexslider({slideshowSpeed: 3000});
+
+		$('.slider-paging-controls').flexslider({animation: "slide", directionNav: false});
+		$('.slider-arrow-controls').flexslider({controlNav: false});
+		$('.slider-thumb-controls .slides li').each(function () {
+						var imgSrc = $(this)
+										.find('img')
+										.attr('src');
+						$(this).attr('data-thumb', imgSrc);
+		});
+		$('.slider-thumb-controls').flexslider({animation: "slide", controlNav: "thumbnails", directionNav: true});
+
+		// Disable parallax on mobile
+
+		if ((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
+			$('section').removeClass('parallax');
+		}
+
+	});
+}
+
+function initIndexJs(){
+	
+	// Navbar height (on scroll) ----------------------------------------
+
+	if (window.matchMedia('(min-width: 992px)').matches) {
+		$(window)
+			.scroll(function () {
+				if ($(this).scrollTop() > 100) {
+					$('.navbar').addClass("scrolled");
+				} else {
+					$('.navbar').removeClass("scrolled");
+				}
+			});
+	}
+
+	// Vivus (animation icon) ----------------------------------------
+	new Vivus('learning-budget', {
+		type: 'oneByOne',
+		duration: 200,
+		file: 'images/learning-budget.svg'
+	});
+	new Vivus('classroom', {
+		type: 'oneByOne',
+		duration: 200,
+		file: 'images/classroom.svg'
+	});
+	new Vivus('virtual-classroom', {
+		type: 'oneByOne',
+		duration: 200,
+		file: 'images/virtual-classroom.svg'
+	});
+
+	// Scroll to targeted section ----------------------------------------
+
+	$(document).ready(function () {
+		// bind click event to all internal page anchors
+		$('a[href*="#"]').on('click', function (e) {
+			// prevent default action and bubbling
+			e.preventDefault();
+			e.stopPropagation();
+			// set target to anchor's "href" attribute
+			var target = $(this).attr('href');
+			// scroll to each target
+
+			if (window.matchMedia('(max-width: 767px)').matches) {
+				$(target).velocity('scroll', {
+					duration: 1500,
+					offset: - 72,
+					//easing: 'ease-in-out'
+					easing: 'easeInOutQuart'
+				});
+			} else {
+				$(target).velocity('scroll', {
+					duration: 1500,
+					offset: - 120,
+					//easing: 'ease-in-out'
+					easing: 'easeInOutQuart'
+				});
+			}
+
+		});
+	});
+
+	
+
+	// ==================== Contact Form ================
+
+	$('#contactform').submit(function () {
+
+		var action = $(this).attr('action');
+
+		$.post(action, $(this).serialize(), function (data) {
+
+			$('#contactform #submit').attr('disabled', '');
+
+			$('.response').remove();
+
+			$('#contactform').before('<p class="response">' + data + '</p>');
+
+			$('.response').slideDown();
+
+			if (data == 'Message sent!<br/> <div class="msg">Thank you for your request. A representative' +
+											' will get back to you within 24 hours.</div>') 
+							$('#contactform').slideUp();
+
+			}
+		);
+
+		return false;
+
+	});
+
+}
 
 function initFixedSidebar(){
 	var body = $(document),

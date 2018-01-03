@@ -35,6 +35,7 @@ import { SingldropdownComponent } from './questiontype/singldropdown/singldropdo
 import { DragDropDirectiveModule} from "angular4-drag-drop";
 import { DropdownComponent } from './questiontype/dropdown/dropdown.component';
 import { AbcComponent } from './questiontype/abc/abc.component';
+import { WebsiteComponent } from './cinchhub/website/website.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { AbcComponent } from './questiontype/abc/abc.component';
     SequenceComponent,
     SingldropdownComponent,
     DropdownComponent,
-    AbcComponent
+    AbcComponent,
+    WebsiteComponent
   ],
   imports: [
     BrowserModule,

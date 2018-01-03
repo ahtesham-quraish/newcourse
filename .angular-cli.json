@@ -33,7 +33,12 @@
         "assets/js/jquery-1.11.2.min.js",
         "assets/js/jquery.main.js",
         "assets/jplayer/jquery.jplayer.js",
-        "assets/js/jquery.audioslideshow.js"
+        "assets/js/jquery.audioslideshow.js",
+        "assets/js/flexslider.min.js",
+        "assets/js/parallax.js",
+        "assets/js/parallax-slider.js",
+        "assets/js/velocity.min.js",
+        "assets/js/vivus.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

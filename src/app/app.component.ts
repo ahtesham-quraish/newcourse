@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {CourseComponent} from '../app/course/course.component'
+// import {CourseComponent} from '../app/course/course.component'
+import {WebsiteComponent} from '../app/cinchhub/website/website.component'
 
 @Component({
   selector: 'app-root',

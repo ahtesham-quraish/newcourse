@@ -1,3 +1,33 @@
+/* Box shadow mixin */
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $top $left $blur $color;
+		-moz-box-shadow:inset $top $left $blur $color;
+		box-shadow:inset $top $left $blur $color;
+	} @else {
+		-webkit-box-shadow: $top $left $blur $color;
+		-moz-box-shadow: $top $left $blur $color;
+		box-shadow: $top $left $blur $color;
+	}
+}
+
+/* Set rem fallback */
+@mixin font-size($sizeValue: 1.6) {
+	font-size: ($sizeValue * 10) + px;
+	font-size: $sizeValue + rem;
+}
+
+/* input placeholder text */
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content}
+	&::-moz-placeholder {opacity: 1; @content}
+	&:-moz-placeholder {@content}
+	&:-ms-input-placeholder {@content}
+	&.placeholder {@content}
+}
+
+
+
 // @include border-radius(5px);
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -5,6 +35,7 @@
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
+
 
 // @include m-radius(5px,5px,5px,5px);
 @mixin m-radius($val1,$val2,$val3,$val4) {
