@@ -1,5 +1,6 @@
 
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpModule} from '@angular/http';
@@ -35,6 +36,17 @@ import { SingldropdownComponent } from './questiontype/singldropdown/singldropdo
 import { DragDropDirectiveModule} from "angular4-drag-drop";
 import { DropdownComponent } from './questiontype/dropdown/dropdown.component';
 import { AbcComponent } from './questiontype/abc/abc.component';
+import { Router } from '@angular/router';
+
+export const ROUTES: Routes = [
+  
+      { path: '', component: CourseComponent ,
+      children: [
+        { path: 'courseId/:id', component: DetailComponent },
+      ],
+    },
+      
+]; 
 
 @NgModule({
   declarations: [
@@ -62,9 +74,11 @@ import { AbcComponent } from './questiontype/abc/abc.component';
     DropdownComponent,
     AbcComponent
   ],
+  exports: [RouterModule],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    RouterModule.forRoot(ROUTES),
     HttpModule,
     BrowserModule,
     VgCoreModule,
