@@ -2,6 +2,7 @@
 <div class="row">
   <div class="col-sm-12 custom-form">
     <h3 [innerHTML]="content.name | safeHtml"></h3>
+    <p><strong>{{question.question}}</strong></p>
     <ul class="list-unstyled rad-list">
         <li class="list-inline-item" *ngFor="let n of question['choices'] let i = index">
             <label [attr.for]="'s'+i" >

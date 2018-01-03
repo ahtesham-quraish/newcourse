@@ -2,6 +2,7 @@
 <div class="row">
   <div class="col-sm-12">
     <h3 [innerHTML]="content.name | safeHtml"></h3>
+    <p><strong>{{question.question}}</strong></p>
     <table class="table fill-in-table no-border">
       <thead>
           <tr *ngFor="let h of head let i = index" >
