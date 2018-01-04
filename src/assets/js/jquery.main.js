@@ -3,12 +3,11 @@ jQuery(function(){
 	// initFixedScrollBlock();
 	initAnchors();
 	initFixedSidebar();
-	// initFlexSlider();
+	initFlexSlider();
 	// initIndexJs();
 });
 
 function initFlexSlider(){
-	$(document).ready(function () {
 
 		// Append .background-image-holder <img>'s as CSS backgrounds
 
@@ -49,7 +48,6 @@ function initFlexSlider(){
 			$('section').removeClass('parallax');
 		}
 
-	});
 }
 
 function initIndexJs(){

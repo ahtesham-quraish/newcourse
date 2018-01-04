@@ -23,12 +23,13 @@ $media-expressions: (
 @import 'vendors/include-media';
 
 //======================= Fonts =======================
-@import url(../css/MyFontsWebfontsKit.css);
+// @import url(../css/MyFontsWebfontsKit.css);
 
 @import "custom";
 @import "vendors/bootstrap/variables";
 @import "vendors/bootstrap/mixins";
 
+@import 'base/fonts';
 @import 'base/mixins';
 @import 'base/helpers';
 @import 'base/reset';
@@ -61,3 +62,4 @@ $media-expressions: (
 @import 'components/home-page';
 @import 'components/web-custom';
 @import 'components/navbar';
+@import 'components/flex-slider';

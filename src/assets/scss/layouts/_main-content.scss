@@ -3,10 +3,22 @@
 	position: relative;
 	
 	h1,
-	h2{@include media('<small-tablet') {font-size: 1.3rem;}}
+	h2{
+		@include media('<small-tablet') {font-size: 1.3rem;}
+
+		font-size: 1.5rem;
+	}
 	h3,
-	h4{@include media('<small-tablet') {font-size: 1.1rem;}}
-	h5{@include media('<small-tablet') {font-size: 1rem;}}
+	h4{
+		@include media('<small-tablet') {font-size: 1.1rem;}
+
+		font-size: 1.25rem;
+	}
+	h5{
+		@include media('<small-tablet') {font-size: 1rem;}
+
+		font-size: 1.1rem;
+	}
 }
 
 .page-header{

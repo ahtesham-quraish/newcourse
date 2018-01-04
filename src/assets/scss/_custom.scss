@@ -31,13 +31,17 @@ $red-cinch									: #f3736c;
 $blue-light-cinch							: #62acca;
 $bluish-gray-light-cinch					: #8892a1;
 $bluish-gray-cinch							: #5f6e7d;
+$gray-cinch                                 : #475562;
 
 
 // Fonts
-$museo-slab-500								: 'MuseoSlab-500';
-$museo-sans-300								: 'MuseoSans-300';
-$museo-sans-500								: 'MuseoSans-500';
-$museo-sans-700								: 'MuseoSans-700';
+$museo-slab-500								: 'MuseoSlab-500', sans-serif;
+$museo-sans-300								: 'MuseoSans-300', sans-serif;
+$museo-sans-500								: 'MuseoSans-500', sans-serif;
+$museo-sans-700								: 'MuseoSans-700', sans-serif;
+
+$base-font-cinch							: 18px !default;
+$line-height-cinch  						: 1.428571429;
 
 
 $base-min-width								: 320px;
@@ -57,11 +61,6 @@ $body-color									: $very-dark-grayish-blue !default;
 $font-size-base								: 0.875rem !default;
 $line-height-base							: 1.42857 !default;
 $link-hover-decoration						: none !default;
-$font-family-sans-serif						: 'MuseoSans-300', sans-serif !default;
-$headings-font-family						: 'MuseoSans-500', sans-serif !default;
+$font-family-sans-serif						: $museo-sans-300 !default;
+$headings-font-family						: $museo-sans-500 !default;
 $headings-font-weight						: 400 !default;
-$font-size-h1								: 1.5rem !default;
-$font-size-h2								: 1.5rem !default;
-$font-size-h3								: 1.25rem !default;
-$font-size-h4								: 1.25rem !default;
-$font-size-h5								: 1.1rem !default;
