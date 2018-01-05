@@ -7,22 +7,6 @@ jQuery(function(){
 	initIndexJs();
 });
 
-//Vivus (animation icon) ----------------------------------------
-new Vivus('learning-budget', {
-	type: 'oneByOne',
-	duration: 200,
-	file: 'assets/images/learning-budget.svg'
-});
-new Vivus('classroom', {
-	type: 'oneByOne',
-	duration: 200,
-	file: 'assets/images/classroom.svg'
-});
-new Vivus('virtual-classroom', {
-	type: 'oneByOne',
-	duration: 200,
-	file: 'assets/images/virtual-classroom.svg'
-});
 
 function initFlexSlider(){
 
@@ -81,6 +65,23 @@ function initIndexJs(){
 				}
 			});
 	}
+
+	//Vivus (animation icon) ----------------------------------------
+	// new Vivus('learning-budget', {
+	// 	type: 'oneByOne',
+	// 	duration: 200,
+	// 	file: 'assets/images/learning-budget.svg'
+	// });
+	// new Vivus('classroom', {
+	// 	type: 'oneByOne',
+	// 	duration: 200,
+	// 	file: 'assets/images/classroom.svg'
+	// });
+	// new Vivus('virtual-classroom', {
+	// 	type: 'oneByOne',
+	// 	duration: 200,
+	// 	file: 'assets/images/virtual-classroom.svg'
+	// });
 
 	// Scroll to targeted section ----------------------------------------
 

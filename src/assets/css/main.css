@@ -1917,17 +1917,17 @@ audio {
   }
 }
 
-#page h1,
-#page h2,
-#page h3,
-#page h4,
-#page h5,
-#page h6 {
+.page h1,
+.page h2,
+.page h3,
+.page h4,
+.page h5,
+.page h6 {
   font-family: "MuseoSans-300", sans-serif;
 }
 
-#page b,
-#page strong {
+.page b,
+.page strong {
   font-family: "MuseoSans-500", sans-serif;
 }
 
@@ -2050,8 +2050,24 @@ audio {
   border-radius: 25px;
 }
 
+#hero-section .btn-get-going.btn-video {
+  font-size: 14px;
+  color: white;
+  background: #38917f;
+}
+
+#hero-section .btn-get-going.btn-video:hover {
+  color: #333;
+  background: rgba(56, 145, 127, 0.8);
+}
+
 @media (min-width: 768px) {
   #hero-section .btn-get-going {
+    font-size: 21px;
+    margin: 0;
+    padding: 9px 12px;
+  }
+  #hero-section .btn-get-going.btn-video {
     font-size: 21px;
     margin: 0;
     padding: 9px 12px;
@@ -2942,6 +2958,7 @@ ul.list-unstyled .list-circled.blue-light li:before {
 }
 
 .navbar .nav {
+  letter-spacing: -6px;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   -webkit-transition: all 0.2s;
@@ -2952,6 +2969,13 @@ ul.list-unstyled .list-circled.blue-light li:before {
   .navbar .nav {
     margin-right: 0;
   }
+}
+
+.navbar .nav > li {
+  white-space: normal;
+  letter-spacing: 0;
+  display: inline-block;
+  vertical-align: top;
 }
 
 @media (min-width: 768px) {
@@ -2971,10 +2995,15 @@ ul.list-unstyled .list-circled.blue-light li:before {
   font-size: 12px;
   display: block;
   font-family: "MuseoSans-500", sans-serif;
+  background: none;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+.navbar .nav > li > a:before {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -3061,6 +3090,7 @@ ul.list-unstyled .list-circled.blue-light li:before {
   overflow: hidden;
   opacity: 0;
   left: -10px;
+  transform: inherit;
 }
 
 @media (max-width: 767px) {
@@ -3077,6 +3107,8 @@ ul.list-unstyled .list-circled.blue-light li:before {
 }
 
 .navbar .nav > li.dropdown .dropdown-menu li a {
+  display: block;
+  font-weight: 400;
   padding: 10px 15px;
   color: white;
 }
@@ -3093,6 +3125,7 @@ ul.list-unstyled .list-circled.blue-light li:before {
 .navbar .nav > li.dropdown:hover ul.dropdown-menu {
   display: block;
   opacity: 1;
+  visibility: visible;
   max-height: 245px;
 }
 

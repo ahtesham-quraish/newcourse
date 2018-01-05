@@ -197,7 +197,7 @@
 		-webkit-box-shadow: 0 2px 10px rgba(black,.2);
 		
 		.nav {
-			margin-top: 10px;
+			// margin-top: 10px;
 			
 			> li {
 
@@ -216,6 +216,12 @@
 						}
 					}
 				}
+			}
+		}
+		.navbar-brand {
+			img {
+				height: 100%;
+    			width: auto;
 			}
 		}		
 	}

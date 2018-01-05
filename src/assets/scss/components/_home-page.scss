@@ -19,7 +19,9 @@
 	@media (min-width: 992px) {
 		padding-top: $navbar-height-lg;
 	}
+}
 
+.page{
 	h1,
 	h2,
 	h3,
@@ -117,10 +119,29 @@
 		color: white;
 		font-family: $museo-slab-500;
 		@include border-radius(25px);
+
+		&.btn-video {
+			font-size: 14px;
+			color: white;
+			background: $green-cinch;
+
+			&:hover {
+				color: #333;
+				background: rgba(56, 145, 127, 0.8);
+			}
+		}
+
+
 		@media (min-width: 768px) {
 			font-size: 21px;
 			margin: 0;
 			padding: 9px 12px;
+
+			&.btn-video {
+				font-size: 21px;
+				margin: 0;
+				padding: 9px 12px;
+			}
 		}
 		@media (min-width: 992px) {}
 		&:hover {
@@ -471,3 +492,4 @@
 	padding: 2rem 1rem;
 	text-align: center;
 }
+
