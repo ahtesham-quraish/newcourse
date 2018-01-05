@@ -3164,7 +3164,7 @@ ul.list-unstyled .list-circled.blue-light li:before {
   .navbar .navbar-brand img {
     width: auto;
     max-width: inherit !important;
-    height: 100%;
+    height: auto;
   }
 }
 

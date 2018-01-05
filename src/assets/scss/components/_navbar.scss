@@ -33,6 +33,7 @@
 	.container{width:100%}
 	
 	.nav {
+		letter-spacing: -6px;
 		@include transition(all 0.2s);
 		
 		@media (min-width: 768px) {
@@ -41,7 +42,8 @@
 		}
 		
 		> li {
-			
+			@include v-align(top);
+
 			@media (min-width: 768px) {
 				margin-right: 15px;
 			}
@@ -55,7 +57,10 @@
 				font-size: 12px;
 				display: block;
 				font-family: $museo-sans-500;
+				background: none;
 				@include transition(all 0.2s);
+
+				&:before{display: none;}
 				
 				@media (min-width: 768px) {
 					padding: 9px 5px;
@@ -133,7 +138,8 @@
 					max-height: 0;
 					overflow: hidden;
 					opacity: 0;
-                    left: -10px;
+					left: -10px;
+					transform: inherit;
 					
 					@media (max-width: 767px) {
 						width: calc(100% - 30px);
@@ -146,6 +152,8 @@
 						border-bottom: 1px solid white;
 						
 						a {
+							display: block;
+							font-weight: 400;
 							padding: 10px 15px;
 							color: white;
 							
@@ -166,6 +174,7 @@
 					ul.dropdown-menu {
 						display: block;
 						opacity: 1;
+						visibility: visible;
 						max-height: 245px;
 					}
 				}
