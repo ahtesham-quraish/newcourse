@@ -1,6 +1,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {enableProdMode} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpModule} from '@angular/http';
 import {CourseListingServiceService} from '../app/service/course-listing-service.service';
@@ -36,6 +37,8 @@ import { DragDropDirectiveModule} from "angular4-drag-drop";
 import { DropdownComponent } from './questiontype/dropdown/dropdown.component';
 import { AbcComponent } from './questiontype/abc/abc.component';
 import { WebsiteComponent } from './cinchhub/website/website.component';
+
+enableProdMode();
 
 @NgModule({
   declarations: [
