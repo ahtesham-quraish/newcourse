@@ -1,6 +1,7 @@
 import { Component,Input, OnInit, ViewChild, ViewContainerRef, ComponentFactoryResolver, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
 declare var jquery:any;
 declare var $ :any;
+import { Router } from '@angular/router';
 import * as jQuery from 'jquery';
 import {WindowRef} from '../service/windowref.service';
 import {PdfComponent} from "../component/pdf/pdf.component";
@@ -62,7 +63,7 @@ export class DetailComponent implements OnInit {
   constructor(private wind: WindowRef,private cd: ChangeDetectorRef,
      private componentFactoryResolver: ComponentFactoryResolver, 
      private detailservice : CourseListingServiceService,
-     private qservice : QuestionSubmitService) { 
+     private qservice : QuestionSubmitService, private router : Router) { 
     
 
   }
@@ -168,6 +169,7 @@ export class DetailComponent implements OnInit {
   }
   back(){
     this.messageEvent.emit('back');
+    this.router.navigate(['courses']);
     console.log("?????????")
   }
 

@@ -1,5 +1,6 @@
 
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import {enableProdMode} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -37,8 +38,23 @@ import { DragDropDirectiveModule} from "angular4-drag-drop";
 import { DropdownComponent } from './questiontype/dropdown/dropdown.component';
 import { AbcComponent } from './questiontype/abc/abc.component';
 import { WebsiteComponent } from './cinchhub/website/website.component';
-
 enableProdMode();
+import { Router } from '@angular/router';
+
+export const ROUTES: Routes = [
+  
+      { path: 'courses', component: CourseComponent ,
+      children: [
+        { path: 'courseId/:id', component: DetailComponent },
+      ],
+    },
+    {
+      path: '',
+      component: WebsiteComponent
+    },
+
+      
+]; 
 
 @NgModule({
   declarations: [
@@ -67,9 +83,11 @@ enableProdMode();
     AbcComponent,
     WebsiteComponent
   ],
+  exports: [RouterModule],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    RouterModule.forRoot(ROUTES),
     HttpModule,
     BrowserModule,
     VgCoreModule,

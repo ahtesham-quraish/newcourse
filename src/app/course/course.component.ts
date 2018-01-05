@@ -1,5 +1,6 @@
 declare var jquery:any;
 declare var $ :any;
+import { Router } from '@angular/router';
 import * as jQuery from 'jquery';
 
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
@@ -14,7 +15,8 @@ import {DetailComponent} from '../detail/detail.component';
 })
 export class CourseComponent implements OnInit {
 
-  constructor(private courselistingser : CourseListingServiceService, private cd: ChangeDetectorRef,) {
+  constructor(private courselistingser : CourseListingServiceService, private cd: ChangeDetectorRef,
+  private router : Router) {
     this.arrayImg[0] = "assets/images/icon-img1.svg";
     this.arrayImg[1] = "assets/images/icon-img2.svg";
     this.arrayImg[2] = "assets/images/icon-img3.svg";
@@ -40,11 +42,15 @@ export class CourseComponent implements OnInit {
    
   }
   ngOnInit() {
-
+    this.router.navigate(['courses']);
     this.courselistingser.fetchCourseData().subscribe(
       function(data) {
         this.courselist = data;
-        this.cd.markForCheck();
+        console.log(this.courselist)
+        for(let i = 0; i< this.courselist.length ; i++){
+          this.courselist[i]['img'] = this.getRandomImage(i)
+        }
+        //this.cd.markForCheck();
 
       }.bind(this)
       
@@ -55,6 +61,8 @@ export class CourseComponent implements OnInit {
   DetailCourse(event, index){
     this.showDetail = true;
     this.courseDetail = this.courselist[index];
+    this.router.navigate(['courses/courseId/'+this.courseDetail.id]);
+
   }
   receiveMessage(event){
     console.log("back")
