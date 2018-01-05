@@ -9,12 +9,12 @@
             </a>
           </div>
         </div>
-        <div class="img-holder"><img [attr.src]="image | safeUrl" alt="course Image" class="img-fluid"></div>
+        <div class="img-box"><img [attr.src]="image | safeUrl" alt="course Image" class="img-fluid"></div>
         <div class="header-text">
           <div class="holder">
             <span class="sub-head">Module</span>
           <h1>{{title}}</h1>
-          <span class="description">Explore highlights from the Winter '18 Release Notes.</span>
+          <span class="description" [innerHTML]="courseDetail.description | safeHtml"></span>
          
           </div>
           <div class="footer">
@@ -33,17 +33,8 @@
                 </li>
               </ul>
               <ul class="tags-list list-inline">
-                <li class="list-inline-item">
-                  <a href="javascript:void(0)" class="btn btn-light">tag1</a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="javascript:void(0)" class="btn btn-light">tag2</a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="javascript:void(0)" class="btn btn-light">tag3</a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="javascript:void(0)" class="btn btn-light">tag4</a>
+                <li *ngFor="let tag of courseDetail.metaData.tags; let j = index" class="list-inline-item">
+                  <a href="javascript:void(0)" class="btn btn-light">{{tag}}</a>
                 </li>
               </ul>
             </div>

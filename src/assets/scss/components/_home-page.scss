@@ -37,6 +37,52 @@
 	}
 }
 
+.modal-large{
+
+	.modal-dialog{
+		max-width: 900px;
+
+		h1{
+			color: $bluish-gray-cinch;
+			font-size: 2.3rem;
+		}
+	}
+
+	.modal-content {
+		@include border-radius(0);
+		padding: 15px;
+	}
+
+}
+
+
+
+#contactform {
+	width: 80%;
+	margin: auto;
+
+	input, textarea {
+		display: block;
+		width: 100%;
+		border: 0;
+		border-bottom: 2px solid #62acca;
+		height: 45px;
+		outline: none;
+		font-size: 18px;
+		font-weight: 300;
+		padding: 0 10px;
+	}
+	textarea
+	{
+		height: 150px;
+		margin-bottom: 10px;
+		max-height: 150px;
+		min-height: 150px;
+		max-width: 100%;
+		padding: 10px;
+	}
+}
+
 #hero-section {
 	color: white;
 	position: relative;
@@ -435,7 +481,7 @@
 }
 
 @media (max-width: 479px) {
-	html body {
+	#page {
 		padding: 73px 0 0;
 	}
 	#hero-section {
@@ -493,3 +539,41 @@
 	text-align: center;
 }
 
+
+
+.close {
+
+	.close-button{
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 20px;
+		height: 20px;
+		opacity: 0.5;
+		@include transition(all 0.25s linear);
+
+		&:hover {
+			opacity: 1;
+			@include transition(all 0.25s linear);
+		}
+
+		&:before, &:after {
+			position: absolute;
+			left: 9px;
+			content: '';
+			height: 20px;
+			width: 2px;
+			background-color: #333;
+		}
+
+		&:before {
+			@include rotate(45);
+		}
+
+		&:after {
+			@include rotate(-45);
+		}
+	}
+	
+  }
+  

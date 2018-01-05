@@ -17,6 +17,7 @@ table th {
 
 a,
 button {
+	cursor: pointer;
 	@include transition(all 0.25s linear);
 	&:hover {
 		@include transition(all 0.25s linear);

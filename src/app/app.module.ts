@@ -1,5 +1,6 @@
 
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpModule} from '@angular/http';
@@ -37,6 +38,23 @@ import { DropdownComponent } from './questiontype/dropdown/dropdown.component';
 import { AbcComponent } from './questiontype/abc/abc.component';
 import { WebsiteComponent } from './cinchhub/website/website.component';
 
+import { Router } from '@angular/router';
+
+export const ROUTES: Routes = [
+  
+      { path: 'courses', component: CourseComponent ,
+      children: [
+        { path: 'courseId/:id', component: DetailComponent },
+      ],
+    },
+    {
+      path: '',
+      component: WebsiteComponent
+    },
+
+      
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,9 +82,11 @@ import { WebsiteComponent } from './cinchhub/website/website.component';
     AbcComponent,
     WebsiteComponent
   ],
+  exports: [RouterModule],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    RouterModule.forRoot(ROUTES),
     HttpModule,
     BrowserModule,
     VgCoreModule,

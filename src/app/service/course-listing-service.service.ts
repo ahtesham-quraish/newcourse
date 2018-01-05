@@ -4,6 +4,7 @@ import { allCourses, questionUrl } from './../urls/courseurl';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from "rxjs/Rx"
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class CourseListingServiceService {
@@ -12,7 +13,7 @@ export class CourseListingServiceService {
 
   fetchCourseData(){
     console.log("me", allCourses)
-    let data = {"regionId": "17", "active" : true}
+    let data = {"regionId": environment.domain != 'undefined' ? environment.domain : '17', "active" : true}
     return this.http.post(allCourses , data).map(response => response.json());
    }
    fetchQuestionData(id){

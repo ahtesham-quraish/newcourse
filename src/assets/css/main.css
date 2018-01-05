@@ -91,6 +91,7 @@ table th {
 
 a,
 button {
+  cursor: pointer;
   -moz-transition: all 0.25s linear;
   -o-transition: all 0.25s linear;
   -webkit-transition: all 0.25s linear;
@@ -235,10 +236,10 @@ button:hover {
 
 .page-header .btn-back .fa {
   font-size: 1rem;
-  vertical-align: text-bottom;
+  vertical-align: top;
 }
 
-.page-header .img-holder {
+.page-header .img-box {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -251,13 +252,13 @@ button:hover {
 }
 
 @media (min-width: 576px) {
-  .page-header .img-holder {
+  .page-header .img-box {
     float: left;
     margin: 0 20px 0 0;
   }
 }
 
-.page-header .img-holder img {
+.page-header .img-box img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -365,6 +366,10 @@ audio {
   overflow: auto;
 }
 
+.btn-home {
+  margin-top: 5px;
+}
+
 .courses-list {
   letter-spacing: -6px;
   margin: 0 -10px;
@@ -415,7 +420,7 @@ audio {
   margin: 0 0 20px;
 }
 
-.card .header .img-holder {
+.card .header .img-box {
   float: left;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -425,7 +430,7 @@ audio {
   width: 85px;
 }
 
-.card .header .img-holder img {
+.card .header .img-box img {
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -1931,6 +1936,50 @@ audio {
   font-family: "MuseoSans-500", sans-serif;
 }
 
+.modal-large .modal-dialog {
+  max-width: 900px;
+}
+
+.modal-large .modal-dialog h1 {
+  color: #5f6e7d;
+  font-size: 2.3rem;
+}
+
+.modal-large .modal-content {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  padding: 15px;
+}
+
+#contactform {
+  width: 80%;
+  margin: auto;
+}
+
+#contactform input, #contactform textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #62acca;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0 10px;
+}
+
+#contactform
+textarea {
+  height: 150px;
+  margin-bottom: 10px;
+  max-height: 150px;
+  min-height: 150px;
+  max-width: 100%;
+  padding: 10px;
+}
+
 #hero-section {
   color: white;
   position: relative;
@@ -2437,7 +2486,7 @@ audio {
 }
 
 @media (max-width: 479px) {
-  html body {
+  #page {
     padding: 73px 0 0;
   }
   #hero-section {
@@ -2495,6 +2544,52 @@ audio {
   text-align: center;
 }
 
+.close .close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+.close .close-button:hover {
+  opacity: 1;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+.close .close-button:before, .close .close-button:after {
+  position: absolute;
+  left: 9px;
+  content: '';
+  height: 20px;
+  width: 2px;
+  background-color: #333;
+}
+
+.close .close-button:before {
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.close .close-button:after {
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
 .bg-yellow {
   background: #febb23;
 }
@@ -2513,6 +2608,10 @@ audio {
 
 .bg-blue-light {
   background: #62acca;
+}
+
+.bg-blue {
+  background: #4e8db6;
 }
 
 .bg-gray {
@@ -3146,10 +3245,6 @@ ul.list-unstyled .list-circled.blue-light li:before {
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.navbar.scrolled .nav {
-  margin-top: 10px;
-}
-
 .navbar.scrolled .nav > li > a {
   font-size: 13px;
   padding-top: 10px;
@@ -3164,6 +3259,11 @@ ul.list-unstyled .list-circled.blue-light li:before {
 .navbar.scrolled .nav > li > a > span:first-child img {
   height: 72%;
   max-width: 78%;
+}
+
+.navbar.scrolled .navbar-brand img {
+  height: 100%;
+  width: auto;
 }
 
 .navbar .navbar-brand {

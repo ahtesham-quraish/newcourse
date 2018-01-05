@@ -72,11 +72,11 @@
 		
 		.fa{
 			font-size: 1rem;
-			vertical-align: text-bottom;
+			vertical-align: top;
 		}
 	}
 	
-	.img-holder{
+	.img-box{
 		@include border-radius(100%);
 		border: 1px solid white;
 		display: block;
@@ -195,3 +195,5 @@ audio{
 	height: 500px;
 	overflow: auto;
 }
+
+.btn-home{margin-top: 5px;}
