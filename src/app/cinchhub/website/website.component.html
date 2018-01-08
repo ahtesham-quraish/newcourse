@@ -1,12 +1,12 @@
 <div id="page" class="page">
     <!-- navbar -->
     <nav class="navbar navbar-toggleable-sm navbar-light fixed-top">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="#"><img class="img-fluid" src="assets/images/cinch-logo.png" alt="cinch" /></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
             <ul class="navbar-nav nav">
                 <li>
                     <a href="#problem">
@@ -95,12 +95,8 @@
                                 <h2 class="hero-text">Unify best-in-class training tools into
                                     <br class="hidden-xs" /> one connected platform.</h2>
                                 <div class='row'>
-                                    <div class='col-sm-6'>
-                                        <a (click)="open(contactForm)" class="btn btn-get-going">Contact us for a demo</a>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a (click)="show(videoModal)" class="btn btn-get-going btn-video">Watch 2 minute video</a>
-                                    </div>
+                                    <a (click)="open(contactForm)" class="btn btn-get-going">Contact us for a demo</a>
+                                    <a (click)="show(videoModal)" class="btn btn-get-going btn-video">Watch 2 minute video</a>
                                 </div>
                             </div>
                         </div>
@@ -115,12 +111,8 @@
                                 <h2 class="hero-text">Unify best-in-class training tools into
                                     <br class="hidden-xs" /> one connected platform.</h2>
                                 <div class='row'>
-                                    <div class='col-sm-6'>
-                                        <a (click)="open(contactForm)" class="btn btn-get-going">Contact us for a demo</a>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a (click)="show(videoModal)" class="btn btn-get-going btn-video">Watch 2 minute video</a>
-                                    </div>
+                                    <a (click)="open(contactForm)" class="btn btn-get-going">Contact us for a demo</a>
+                                    <a (click)="show(videoModal)" class="btn btn-get-going btn-video">Watch 2 minute video</a>
                                 </div>
                             </div>
                         </div>
@@ -135,12 +127,8 @@
                                 <h2 class="hero-text">Unify best-in-class training tools into
                                     <br class="hidden-xs" /> one connected platform.</h2>
                                 <div class='row'>
-                                    <div class='col-sm-6'>
-                                        <a (click)="open(contactForm)" class="btn btn-get-going">Contact us for a demo</a>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a (click)="show(videoModal)" class="btn btn-get-going btn-video">Watch 2 minute video</a>
-                                    </div>
+                                    <a (click)="open(contactForm)" class="btn btn-get-going">Contact us for a demo</a>
+                                    <a (click)="show(videoModal)" class="btn btn-get-going btn-video">Watch 2 minute video</a>
                                 </div>
                             </div>
                         </div>
@@ -155,12 +143,8 @@
                                 <h2 class="hero-text">Unify best-in-class training tools into
                                     <br class="hidden-xs" /> one connected platform.</h2>
                                 <div class='row'>
-                                    <div class='col-sm-6'>
-                                        <a (click)="open(contactForm)" class="btn btn-get-going">Contact us for a demo</a>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a (click)="show(videoModal)" class="btn btn-get-going btn-video">Watch 2 minute video</a>
-                                    </div>
+                                    <a (click)="open(contactForm)" class="btn btn-get-going">Contact us for a demo</a>
+                                    <a (click)="show(videoModal)" class="btn btn-get-going btn-video">Watch 2 minute video</a>
                                 </div>
                             </div>
                         </div>
@@ -206,7 +190,7 @@
                 A single monolithic LMS is outdated and is holding organizations back.
             </p>
             <div class="row problem-blocks">
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <div class="icon-holder">
                         <div id="learning-budget"></div>
                         <!--<img src="assets/images/learning-budget.svg" alt="learning budget" width="125" />-->
@@ -214,7 +198,7 @@
                     </div>
                     <span>of the learning technology budget is comprised of LMS </span>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <div class="icon-holder">
                         <div id="classroom"></div>
                         <!--<img src="assets/images/classroom.svg" alt="classroom" width="93" />-->
@@ -222,7 +206,7 @@
                     </div>
                     <span>of users are satisfied with in-person classroom scheduling</span>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <div class="icon-holder">
                         <div id="virtual-classroom"></div>
                         <!--                        <img src="assets/images/virtual-classroom.svg" alt="virtual classroom" width="146" />-->
@@ -249,34 +233,36 @@
                 <img src="assets/images/solution.png" alt="solution image" />
             </div>
             <h2 class="text-center">Cinch makes connecting training data a cinch</h2>
-            <div class="solution-table">
-                <div class="table-row head">
-                    <div class="table-col">Typical Learning Management System</div>
-                    <div class="table-col">Cinch Training Management Platform Plus LCMS</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-col">Feature set limited by the application. Challenging to predict future needs.</div>
-                    <div class="table-col">Built with scalable architecture to handle future needs.</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-col">Integrating other tools is challenging, costly, and not always possible.</div>
-                    <div class="table-col">Can incorporate best of breed third-party technology into the platform.</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-col">
-                        Limited customization customization.
+            <div class="table-holder">
+                <div class="solution-table">
+                    <div class="table-row head">
+                        <div class="table-col">Typical Learning Management System</div>
+                        <div class="table-col">Cinch Training Management Platform Plus LCMS</div>
                     </div>
-                    <div class="table-col">
-                        Integrate new training platforms as your enterprise needs grow.
+                    <div class="table-row">
+                        <div class="table-col">Feature set limited by the application. Challenging to predict future needs.</div>
+                        <div class="table-col">Built with scalable architecture to handle future needs.</div>
                     </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-col">
-                        Most LMS utilize outdated standards
-                        <br/>(i.e. SCORM)
+                    <div class="table-row">
+                        <div class="table-col">Integrating other tools is challenging, costly, and not always possible.</div>
+                        <div class="table-col">Can incorporate best of breed third-party technology into the platform.</div>
                     </div>
-                    <div class="table-col">
-                        Combine SCORM and new standards such as Agile SCORM and xAPI as you see fit.
+                    <div class="table-row">
+                        <div class="table-col">
+                            Limited customization customization.
+                        </div>
+                        <div class="table-col">
+                            Integrate new training platforms as your enterprise needs grow.
+                        </div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-col">
+                            Most LMS utilize outdated standards
+                            <br/>(i.e. SCORM)
+                        </div>
+                        <div class="table-col">
+                            Combine SCORM and new standards such as Agile SCORM and xAPI as you see fit.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -289,10 +275,10 @@
             <h1 class="section-title">Features</h1>
             <h1 class="section-subtitle">Streamlined Learning Content Management</h1>
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-md-8">
                     <img class="img-fluid" src="assets/images/streamlined-content-authoring.png" alt="image" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <ul class="list-circled white p0">
                         <li>
                             <strong>Simple and efficient content authoring:</strong> Swiftly create and manage content using structured
@@ -320,7 +306,7 @@
         <div class="container-fluid">
             <h1 class="section-subtitle">Streamlined Training Administration</h1>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <p>
                         <strong></strong>
                     </p>
@@ -339,13 +325,13 @@
                             calendar integrated with GoToWebinar.</li>
                     </ul>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-md-8">
                     <img class="img-fluid" src="assets/images/screenshot-flat.png" alt="image" />
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-8"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-8"></div>
             </div>
 
         </div>
@@ -357,10 +343,10 @@
             <h1 class="section-subtitle">Streamlined Integration</h1>
 
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-md-8">
                     <img class="img-fluid" src="assets/images/education.png" alt="image" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <ul class="list-circled white p0">
                         <li>
                             <strong>Utilize best-in-class 3rd party tools:</strong> Maximize your user experience by connecting your
@@ -383,7 +369,7 @@
         <div class="container-fluid">
             <h1 class="section-subtitle">Exams</h1>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-4">
 
                     <ul class="list-circled green  p0 pull-right">
                         <li>
@@ -400,13 +386,13 @@
                             the right tone and rigor with your end-users.</li>
                     </ul>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-md-8">
                     <img class="img-fluid" src="assets/images/exam.png" alt="image" />
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-8"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-8"></div>
             </div>
         </div>
     </section>
@@ -417,10 +403,10 @@
             <h1 class="section-subtitle">Dashboards</h1>
 
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-md-8">
                     <img class="img-fluid" src="assets/images/dashboard.png" alt="image" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <ul class="list-circled white p0">
                         <li>
                             <strong>All your data in one view:</strong> Quickly see the health of your training in one view even if the
@@ -450,7 +436,7 @@
                 utilize the entire CinchHub ecosystem.</p>
             <p>We know the e-learning space. Here are some of the awards we won and the clients we work with.</p>
             <div class="logos-container">
-                <div class="logo-row">
+                <div class="logo-row text-center">
                     <div class="logo-col">
                         <img class="img-fluid" src="assets/images/northwestern-uni-logo.png" alt="image" />
                     </div>
@@ -472,19 +458,19 @@
     <section id="logos" class="info-section">
         <div class="container">
             <div class="row awards-row">
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-md-3 col-sm-6">
                     <img class="img-fluid" src="assets/images/award-gold.png" alt="image" />
                     <span>Best Advance in Learning Technology</span>
                 </div>
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-md-3 col-sm-6">
                     <img class="img-fluid" src="assets/images/award-silder.png" alt="image" />
                     <span>Best Certification Program</span>
                 </div>
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-md-3 col-sm-6">
                     <img class="img-fluid" src="assets/images/award-silder.png" alt="image" />
                     <span>Best Learning Business Strategy</span>
                 </div>
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-md-3 col-sm-6">
                     <img class="img-fluid" src="assets/images/awar-brownze.png" alt="image" />
                     <span>Best Advance in Extended Enterprise</span>
                 </div>

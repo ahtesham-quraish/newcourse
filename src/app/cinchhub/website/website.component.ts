@@ -13,6 +13,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class WebsiteComponent implements OnInit {
   closeResult: string;
+  public isCollapsed = true;
   constructor(private wind: WindowRef , private router : Router, private modalService: NgbModal) { }
 
   ngOnInit() {
